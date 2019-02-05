@@ -104,3 +104,185 @@ def areYouPlayingBanjo(name):
 def capitalizeWord(word):
     return  word[0].upper() + word[1:].lower()
 #print(capitalizeWord("LLmawzaxm"))
+
+def printer_error(s):
+    
+    len_string = len(s)
+    #print(len_string)
+    licznik = 0
+    tablica = ['n','o','p','q','r','s','t','u','w','y','x','z'] 
+    for i in s:
+        if i in tablica :
+            licznik = licznik + 1
+    
+    #print(licznik)
+
+    x = "%s/%s" % (licznik,len_string)
+    print(x)
+    licznik = 0
+#string = "addsadasdnasjda"
+# printer_error(string)
+
+
+def song_decoder(song):
+    song = song.split('WUB')
+    original_version = []
+    for i in song:
+        if i != '':
+            original_version += [i]
+    return ' '.join(original_version)
+
+# print(song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"))
+                                
+def spin_words(sentence):
+    sentence = sentence.split(' ')
+    for i in sentence:
+        if (len(i)>5):
+            zmienna = sentence.index(i)
+            sentence[zmienna] = i[::-1]
+    return ' '.join(sentence)
+    
+# print(spin_words("Hey fellow warriors")
+ 
+
+alfabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+def find_missing_letter(chars): 
+    tab  = []
+    i = 0
+    j = 0
+    print(len(alfabet))
+    for i in range(len(chars)):
+        tab.append(chars[i].lower())
+
+    count = alfabet.index(chars[0].lower())
+    counter=0 
+    result = 0
+
+    for j in range(count,26,1):
+        if tab[0:counter] == alfabet[count:j]:
+            counter+=1
+            result = j
+    if chars[0] == chars[0].upper():
+        return alfabet[result].upper()
+    else:
+        return alfabet[result]
+    
+    
+# lista = ['a','b','c','d','f']
+# lista2 = ['O','Q','R','S']
+# print(find_missing_letter(['O','Q','R','S']))
+
+ 
+dictionary = {
+    'a' : "1",
+    'b' : "2",
+    'c' : "3",
+    'd' : "4",
+    'e' : "5",
+    'f' : "6",
+    'g' : "7",
+    'h' : "8",
+    'i' : "9",
+    'j' : "10",
+    'k' : "11",
+    'l' : "12",
+    'm' : "13",
+    'n' : "14",
+    'o' : "15",
+    'p' : "16",
+    'q' : "17",
+    'r' : "18",
+    's' : "19",
+    't' : "20",
+    'u' : "21",
+    'v' : "22",
+    'w' : "23",
+    'x' : "24",
+    'y' : "25",
+    'z' : "26"
+
+}
+
+
+def alphabet_position(text):
+    orginal_string = []
+    for i in text:
+        if i.lower() in dictionary:
+            orginal_string.append(dictionary.get(i.lower()))
+    return ' '.join(orginal_string)
+#print(alphabet_position("The narwhal bacons at midnight."))
+
+def high(text):
+    array_words = text.split(' ')
+    
+    result = 0
+    for i in array_words:
+        value_word = 0
+        for j in i:
+            value_word += int(dictionary.get(j))
+        if(value_word > result):
+            result = value_word
+            output = i
+    return output
+
+# def high(x):
+#     return max(x.split(), key=lambda k: sum(ord(c) - 96 for c in k))
+# print(high('man i need a taxi up to ubud'))
+
+def bouncingBall(h = 0.0, bounce = 0.0, window = 1.5):
+    if h >0 and 0< bounce <1 and window <h:
+        times = 0
+        while h>window:
+            if h > window:
+                times +=1
+            h = h*bounce
+            if h > window:
+                times +=1
+        return times
+    else: return -1
+
+# print(bouncingBall(30, 0.66, 1.5))
+
+def to_weird_case(string):
+    
+    list_string = []
+  
+    for word in string.split(' '):
+        counter = 0
+        word_return = ""
+        for letter in word:
+            if counter % 2: #even
+               word_return +=  letter.lower()  
+            else:       #odd
+                word_return +=  letter.upper()
+            counter +=1
+        list_string.append(word_return)
+    return ' '.join(list_string)
+
+def to_weird_case_word(string):
+    return "".join(c.upper() if i%2 == 0 else c for i, c in enumerate(string.lower()))
+    
+# def to_weird_case(string):
+#     return " ".join(to_weird_case_word(str) for str in string.split())  
+#print(to_weird_case('This is a test'))
+
+def create_phone_number(n):
+    index = 0
+    i = 0
+    string = ""
+    char_list = ['(',') ','-']
+
+    for number in n:
+        if((index == 0) or  (index == 3) or (index == 6)) :
+            string += char_list[i]
+            i+=1
+
+        string += (str(number))
+        index +=1
+    
+    return string 
+# def create_phone_number(n):
+#   return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+
+#print(create_phone_number([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
