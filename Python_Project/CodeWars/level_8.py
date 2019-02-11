@@ -286,3 +286,118 @@ def create_phone_number(n):
 #   return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
 
 #print(create_phone_number([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+
+#Abbreviate a Two Word Name
+def abbrevName(name):
+    string1, string2  =   name.split(" ")
+    return (string1[0] +   "." +   string2[0]).upper()
+    # x   =    "".join(c if c.isupper() else "" for c in name)
+    # return x[0] +   "." +   x[1]
+#print(abbrevName("Sam Harris"))
+
+#Even or Odd
+def even_or_odd(number):
+    return "Odd" if number%2 else "Even"
+#print(even_or_odd(2))
+
+#Find the smallest integer in the array
+def find_smallest_int(arr):
+    arr.sort()
+    return arr[0]
+#print(find_smallest_int([78, 56, 232, 12, 11, 43]))
+
+#String repeat
+def repeat_str(repeat, string):
+    return "".join(string for i in range(repeat)) 
+#print(repeat_str(4, 'a'))
+
+#Return Negative
+def make_negative( number ):
+    return (number - 2*number) if number >=  0 else number
+#print(make_negative(42))
+
+#Sum of positive
+def positive_sum(arr):
+    wynik = 0
+    for i in arr:
+        if i >= 0:
+            wynik = wynik   +   i
+        else:  continue
+    return wynik
+#print(positive_sum([1,2,3,4,5]))
+
+#Convert boolean values to strings 'Yes' or 'No'.
+def bool_to_word(boolean):
+    return "Yes" if boolean else "No"
+
+#Convert a Number to a String!
+def number_to_string(num):
+    return str(num)
+
+#Remove First and Last Character
+def remove_char(s):
+    return s[1:-1]
+#print(remove_char('eloquent'))
+
+#Counting sheep...
+array1 = [True,  True,  True,  False,
+
+          True,  True,  True,  True ,
+
+          True,  False, True,  False,
+
+          True,  False, False, True ,
+
+          True,  True,  True,  True ,
+
+          False, False, True,  True ]
+
+def count_sheeps(arrayOfSheeps):
+    result = 0
+
+    for i in arrayOfSheeps:
+        if i == True:
+            result = result + 1
+        else : continue
+    return result
+#other solution return arrayOfSheeps.count(True)
+#print(count_sheeps(array1))
+
+#Reversed Strings
+def solution(string):
+    return ''.join(reversed(string))
+
+#Jenny's secret message
+def greet(name):
+  if name == "Johnny":
+        return "Hello, my love!"
+  return "Hello, {name}!".format(name=name)
+
+#Basic Mathematical Operations
+def basic_op(operator, value1, value2):
+    if operator == '+':
+        result  =   value1 + value2 
+    elif operator == '-':
+        result  =   value1 - value2 
+    elif operator == '*':
+        result  =   value1 * value2 
+    elif operator == '/':
+        result  =   value1 / value2 
+    return result
+    #other resolution
+    # def basic_op(operator, value1, value2):
+    # return eval("{}{}{}".format(value1, operator, value2))
+    # def basic_op(o, a, b):
+    # return {'+':a+b,'-':a-b,'*':a*b,'/':a/b}.get(o)
+#print(basic_op('+', 4, 7))
+
+#Square(n) Sum
+def square_sum(numbers):
+    return sum(i * i for i in numbers)
+
+#print(square_sum([1,2]))
+
+#A Needle in the Haystack
+def find_needle(haystack):
+    return "found the needle at position {}".format(haystack.index("needle"))
+#print(find_needle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk']))
