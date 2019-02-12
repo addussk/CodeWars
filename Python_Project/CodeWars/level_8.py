@@ -396,3 +396,43 @@ def square_sum(numbers):
 def find_needle(haystack):
     return "found the needle at position {}".format(haystack.index("needle"))
 #print(find_needle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk']))
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 2/12/2019
+
+#Convert number to reversed array of digits
+def digitize(n):
+
+    return list(map(int,(list(reversed(str(n))))))
+
+#print(digitize(35231))
+
+#Convert a String to a Number!
+def string_to_number(s):
+    return int(s)
+
+#Count of positives / sum of negatives
+def count_positives_sum_negatives(arr):
+    return [] if ((arr == [])) else [len(list(filter(lambda x: x > 0,arr))),sum(filter(lambda x: x < 0,arr))]
+
+#print(count_positives_sum_negatives([]))
+
+#Calculate average
+def find_average(array):
+    return 0 if len(array) == 0 else (sum(array)/len(array))
+#other solution
+    # try:
+    #     return sum(array) / len(array)
+    # except ZeroDivisionError:
+    #     return 0
+#print(find_average([ 1, 2, 3 ]))
+
+#Invert values
+def invert(lst):
+    return [] if lst == [] else list(map(lambda x: x*(-1),lst))
+
+#Sum without highest and lowest number
+def sum_array(arr):
+    return 0 if (arr == None or len(arr)<3) else sum(arr) - min(arr) - max(arr)
+    
+print(sum_array([ 3, 5]))
+
