@@ -363,7 +363,7 @@ def solution(string):
     return ''.join(reversed(string))
 
 #Jenny's secret message
-def greet(name):
+def greet2(name):
   if name == "Johnny":
         return "Hello, my love!"
   return "Hello, {name}!".format(name=name)
@@ -433,6 +433,64 @@ def invert(lst):
 #Sum without highest and lowest number
 def sum_array(arr):
     return 0 if (arr == None or len(arr)<3) else sum(arr) - min(arr) - max(arr)
-    
-print(sum_array([ 3, 5]))
 
+#print(sum_array([ 3, 5]))
+from functools import reduce
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 02/13/2019
+#Find Maximum and Minimum Values of a List
+def min(arr):
+    arr.sort()
+    return arr[0]
+
+def max(arr):
+    arr.sort()
+    return arr[len(arr)-1]
+import math
+#Century From Year
+def century(year):
+    return math.ceil(year/100)
+
+#print(century(1700))
+
+#You Can't Code Under Pressure #1
+def double_integer(i):
+    return i**2
+
+#Do I get a bonus?
+def bonus_time(salary, bonus):
+    return "${}".format(salary *10) if bonus else "${}".format(salary)
+
+#Sentence Smash
+def smash(words):
+    return " ".join(words)
+
+#print(smash(["hello", "world"]))
+
+#Volume of a Cuboid
+def getVolumeOfCubiod(length, width, height):
+    return length*width*height
+
+#Double Char
+def double_char(s):
+    return "".join(list(map(lambda x: x + x,s)))
+
+#print(double_char("String")) # SSttrriinngg")
+
+#Transportation on vacation
+def rental_car_cost(d):
+    if d > 6:
+        return (d*40 -50)
+    elif 3<= d < 8:
+        return (d*40 -20)
+    else:
+        return d*40
+ 
+#Function 3 - multiplying two numbers
+def multiply(arg1,arg2):
+     return arg1*arg2
+
+#Reversed Words
+def reverseWords(str):#function which convert every word in string to an element of a list then reverses order in list then  each element of list merge to one string 
+    return " ".join(reversed(str.split())) 
+
+print(reverseWords("hello world!"))
