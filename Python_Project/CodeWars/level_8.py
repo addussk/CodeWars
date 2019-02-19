@@ -493,4 +493,146 @@ def multiply(arg1,arg2):
 def reverseWords(str):#function which convert every word in string to an element of a list then reverses order in list then  each element of list merge to one string 
     return " ".join(reversed(str.split())) 
 
-print(reverseWords("hello world!"))
+#print(reverseWords("hello world!"))
+
+#Convert a Boolean to a String
+def boolean_to_string(b):
+    return "True" if b else "False"
+
+#Rock Paper Scissors!
+def rps(p1, p2):
+    beats = {'rock': 'scissors', 'scissors': 'paper', 'paper': 'rock'}
+    if beats[p1] == p2:
+        return "Player 1 won!"
+    if beats[p2] == p1:
+        return "Player 2 won!"
+    return "Draw!"
+
+#Count by X
+def count_by(x, n):
+    wynik = 0
+    lst = []
+    for i in range(n):
+        wynik = wynik + x
+        lst.append(wynik)
+    return lst 
+
+#print(count_by(1, 5))
+
+#Sum Arrays  
+def sum_array_vol2(a):
+    return 0 if a == [] else sum(a)
+
+#Fake Binary
+def fake_bin(x):
+    return ''.join("0" if int(i) <5 else '1' for i in str(x))
+
+#print(fake_bin(45385593107843568))
+
+#Reversed sequence
+def reverse_seq(n):
+    return [i for i in range(n,0,-1)] 
+
+#print(reverse_seq(5))
+
+#Unfinished Loop - Bug Fixing #1
+def create_array(n):
+    res=[]
+    i=1
+    while i<=n: 
+        res+=[i]
+        i = i+1
+    return res
+
+#Is n divisible by x and y?
+def is_divisible(n,x,y):
+    return True if n % x == 0 and  n % y == 0 else False
+
+#print(is_divisible(48,3,4))
+
+#Opposites Attract
+def lovefunc( flower1, flower2 ):
+    return True if ((even_or_odd(flower1) == "Odd" and even_or_odd(flower2) == "Even") or (even_or_odd(flower2) == "Odd" and even_or_odd(flower1) == "Even")) else False
+
+#print(lovefunc(1,3))
+
+#Beginner - Lost Without a Map
+def maps(a):
+    return list(map(lambda x: x*2,a))
+
+#Short Long Short
+def solution_vol2(a, b):
+    return "{}".format(a)  + b + "{}".format(a) if len(b) > len(a) else "{}".format(b)  + a + "{}".format(b)
+#A function within a function
+def always(n = 0):
+    def multiplier():
+        return  n
+    return multiplier
+
+# three = always(3)
+# print(three())
+
+#altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+def to_alternating_case(string):
+    return ''.join( letter.upper() if letter.islower() else letter.lower() for letter in string)
+
+#print(to_alternating_case("HeLLo WoRLD"))
+
+#Stringy Strings
+def stringy(size):
+    return ''.join('1' if not i%2 else '0' for i in range(size))
+
+#MakeUpperCase
+def make_upper_case(s):
+    return ''.join( chr(ord(letter) - 32) if ord(letter) in range(97,123) else letter for letter in s)
+# for sweep case return ''.join((chr(ord(letter)+32) if ord(letter) in range(65,90) else chr(ord(letter) - 32)) if(ord(letter) in range(65,90) or ord(letter) in range(97,122)) else letter for letter in s)
+
+#How many lightsabers do you own?
+def howManyLightsabersDoYouOwn(s = "Nobody"):
+    return 18 if s == "Zach" else 0
+
+#Regular Ball Super Ball
+class Ball(object):
+    # ball_type = "regular" 
+    def __init__(self,type_ball = "regular"):
+        self.ball_type = type_ball
+
+#Get the mean of an array
+def get_average(marks):
+    return math.floor(sum(marks)/(len(marks)))
+#print(get_average([2, 2, 2, 2]))
+
+number_to_name_string = {
+    0: "Zero",
+    1: "One",
+    2: "Two",
+    3: "Three",
+    4: "Four",
+    5: "Five",
+    6: "Six",
+    7: "Seven",
+    8: "Eight",
+    9: "Nine",
+}
+#Switch it Up!
+def switch_it_up(number):
+    return number_to_name_string[number]
+#print(switch_it_up(0))
+
+#You only need one - Beginner
+def check(seq, elem):
+    return elem in seq
+    #return True if [True if elem == element else False for element in seq].count(True) else False
+
+#Function 2 - squaring an argument
+def square(n):
+    return n*n
+
+#Keep up the hoop
+def hoop_count(n):
+    return "Great, now move on to tricks" if n>10 else "Keep at it until you get it"
+
+#Sleigh Authentication
+class Sleigh(object):
+    def authenticate(self, name, password):
+        return True
