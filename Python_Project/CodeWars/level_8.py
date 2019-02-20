@@ -634,5 +634,90 @@ def hoop_count(n):
 
 #Sleigh Authentication
 class Sleigh(object):
+    name = 'Santa Claus'
+    password = 'Ho Ho Ho!'
     def authenticate(self, name, password):
-        return True
+        return True if (self.name == name and self.password == password) else False
+
+# sleigh = Sleigh()
+# print(sleigh.name)
+
+# print(sleigh.authenticate('Santa Claus', 'Ho Ho!'))
+
+#Basic variable assignment
+a = "code"
+b = "wa.rs"
+name = a + b
+
+#Simple multiplication
+def simple_multiplication(number) :
+    return number* 9 if number%2 else number*8
+
+#My head is at the wrong end!
+def fix_the_meerkat(arr):
+    return list(reversed(arr))
+
+#Correct the mistakes of the character recognition software
+def correct(string):
+    dic = {
+        '0':'O',
+        '1':'I',
+        '5':'S',
+    }
+    return ''.join( letter if letter not in dic else dic[letter] for letter in string)
+#other instresting solution
+#   return string.translate(str.maketrans("501", "SOI"))
+#   return string.replace('1','I').replace('0','O').replace('5','S')
+#print(correct("L0ND0N"))
+
+#I love you, a little , a lot, passionately ... not at all
+def how_much_i_love_you(nb_petals):
+    return ["I love you", "a little", "a lot", "passionately", "madly", "not at all"][nb_petals % 6 - 1] 
+
+#Count the Monkeys!
+def monkey_count(n):
+    return range(1,n+1)
+
+#Beginner - Reduce but Grow
+def grow(arr):
+    return reduce(lambda x,y: x*y,arr)
+
+#Returning Strings
+def greet_vol3(name):
+    return "Hello, {} how are you doing today?".format(name)
+
+#Calculate BMI
+def bmi(weight, height):
+    bmi = weight / height **2
+    if bmi <=18.5:
+        return  "Underweight"
+    elif bmi <=25:
+        return  "Normal"
+    elif bmi <= 30 :
+        return "Overweight"
+    else : return "Obese"
+
+#Basic Training: Add item to an Array
+#websites.append("codewars")
+
+#Exclusive "or" (xor) Logical Operator
+def xor(a,b):
+    return True if a^b else False
+
+#Number toString
+a = str(123)
+
+#Color Ghost
+import random
+colors = ['yellow', 'purple', 'red', 'white']
+class Ghost(object):
+    def __init__(self):
+        self.color = colors[random.randrange(0,4)]
+
+#How good are you really?
+def better_than_average(class_points, your_points):
+    return True if sum(class_points)/len(class_points) < your_points else False
+
+#Plural
+def plural(n):
+    return "Plural for {}".format(n) if n != 1 else "1 is singular!"
