@@ -721,3 +721,77 @@ def better_than_average(class_points, your_points):
 #Plural
 def plural(n):
     return "Plural for {}".format(n) if n != 1 else "1 is singular!"
+
+#The 'if' function
+def _if(bool, func1, func2):
+    return func1() if bool else func2()
+
+#Is he gonna survive?
+def hero(bullets, dragons):
+    return True if bullets//dragons >= 2 else False 
+
+#Kata Example Twist
+websites = []
+
+for i in range(0,1000):
+    websites.append("codewars")
+
+#Convert a string to an array
+def string_to_array(s):
+    return s.split(" ")
+
+#Reversing Words in a String
+def reverse(st):
+    return ' '.join(list(reversed(st.split())))
+
+#print(reverse("Hello World!"))
+
+#If you can't sleep, just count sheep!!
+def count_sheep(n):
+    return ''.join("{} sheep...".format(i) for i in range(1,n+1))
+
+#Third Angle of a Triangle
+def other_angle(a, b):
+    return 180 - a - b
+
+#Thinkful - Logic Drills: Traffic light
+def update_light(current):
+    return {"green": "yellow", "yellow": "red", "red": "green"}[current]
+
+language_dic = {
+'english': 'Welcome',
+'czech': 'Vitejte',
+'danish': 'Velkomst',
+'dutch': 'Welkom',
+'estonian': 'Tere tulemast',
+'finnish': 'Tervetuloa',
+'flemish': 'Welgekomen',
+'french': 'Bienvenue',
+'german': 'Willkommen',
+'irish': 'Failte',
+'italian': 'Benvenuto',
+'latvian': 'Gaidits',
+'lithuanian': 'Laukiamas',
+'polish': 'Witamy',
+'spanish': 'Bienvenido',
+'swedish': 'Valkommen',
+'welsh': 'Croeso'
+}
+#Welcome!
+def greet_vol4(language):
+    return language_dic[language] if language in language_dic  else 'Welcome'
+
+#Dollars and Cents
+def format_money(amount):
+    return "${:.2f}".format(float(amount))
+
+#Thinkful - Number Drills: Pixelart planning
+def is_divisible_vol2(wall_length, pixel_size):
+    return True if not wall_length % pixel_size else False
+
+#Cat years, Dog years
+def human_years_cat_years_dog_years(human_years):
+    catYears = [15,24,(24 + 4*(human_years-2))]
+    dogYears = [15,24,(24 + 5*(human_years-2))]
+    x = int(not human_years == 1) + int(human_years > 2)
+    return [human_years,catYears[ x ],dogYears[ x ]]
