@@ -25,37 +25,22 @@ def iq_test(string):
 #task 2 - shortest word
 
 def find_short(phrase):
-
-
     x = phrase.split()
     len_shortest_word = int(x[0].__len__())
-
 
     for i in range(0, int(x.__len__())):
         if int(x[i].__len__()) < len_shortest_word :
             len_shortest_word = int(x[i].__len__())
-
-
-
 
     return len_shortest_word #shortest word length
 
 #similar solution
 
 def find_short2(s):
-
     return min(len(x) for x in s.split(" "))
 
-# print()
-
-# print(find_short("bitcoin take over the world maybe who knows perhaps"))
-# print(find_short("turns out random test cases are easier than writing out basic ones"))
-# print(find_short("lets talk about javascript the best language"))
-# print(find_short("i want to travel the world writing code one day"))
-# print(find_short("Lets all go on holiday somewhere very cold"))
 
 # DNA to RNA Conversion
-
 def DNAtoRNA(dna):
     string1 = ""
     for letter in dna:
@@ -66,26 +51,18 @@ def DNAtoRNA(dna):
     return string1
 def DNAtoRNA2(dna):
     return "".join(["U" if c=="T" else c for c in dna])
-#print(DNAtoRNA2("TTAAGCT"))
 
 # Grasshopper - Summation
-
 def summation(num):
     return sum(range(1,num+1))
-
-#print(summation(8))
 
 #Function 1 - hello world
 def greet():
     return "hello world!"
-#print(greet())
 
 #The Feast of Many Beasts
 def feast(beast, dish):
     return  (beast[0] == dish [0] and beast[-1] == dish [-1])
-    
-# print(feast("chickadee", "chocolate cake"))
-# print(feast("brown bear", "bear claw"))
 
 #L1: Set Alarm
 def set_alarm(employed, vacation):
@@ -103,7 +80,6 @@ def areYouPlayingBanjo(name):
 #Capitalization and Mutability
 def capitalizeWord(word):
     return  word[0].upper() + word[1:].lower()
-#print(capitalizeWord("LLmawzaxm"))
 
 def printer_error(s):
     
@@ -114,15 +90,10 @@ def printer_error(s):
     for i in s:
         if i in tablica :
             licznik = licznik + 1
-    
-    #print(licznik)
 
     x = "%s/%s" % (licznik,len_string)
     print(x)
     licznik = 0
-#string = "addsadasdnasjda"
-# printer_error(string)
-
 
 def song_decoder(song):
     song = song.split('WUB')
@@ -131,8 +102,6 @@ def song_decoder(song):
         if i != '':
             original_version += [i]
     return ' '.join(original_version)
-
-# print(song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"))
                                 
 def spin_words(sentence):
     sentence = sentence.split(' ')
@@ -141,10 +110,7 @@ def spin_words(sentence):
             zmienna = sentence.index(i)
             sentence[zmienna] = i[::-1]
     return ' '.join(sentence)
-    
-# print(spin_words("Hey fellow warriors")
  
-
 alfabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 def find_missing_letter(chars): 
@@ -167,12 +133,6 @@ def find_missing_letter(chars):
         return alfabet[result].upper()
     else:
         return alfabet[result]
-    
-    
-# lista = ['a','b','c','d','f']
-# lista2 = ['O','Q','R','S']
-# print(find_missing_letter(['O','Q','R','S']))
-
  
 dictionary = {
     'a' : "1",
@@ -204,14 +164,12 @@ dictionary = {
 
 }
 
-
 def alphabet_position(text):
     orginal_string = []
     for i in text:
         if i.lower() in dictionary:
             orginal_string.append(dictionary.get(i.lower()))
     return ' '.join(orginal_string)
-#print(alphabet_position("The narwhal bacons at midnight."))
 
 def high(text):
     array_words = text.split(' ')
@@ -242,7 +200,6 @@ def bouncingBall(h = 0.0, bounce = 0.0, window = 1.5):
         return times
     else: return -1
 
-# print(bouncingBall(30, 0.66, 1.5))
 
 def to_weird_case(string):
     
@@ -285,7 +242,6 @@ def create_phone_number(n):
 # def create_phone_number(n):
 #   return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
 
-#print(create_phone_number([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 
 #Abbreviate a Two Word Name
 def abbrevName(name):
@@ -795,3 +751,52 @@ def human_years_cat_years_dog_years(human_years):
     dogYears = [15,24,(24 + 5*(human_years-2))]
     x = int(not human_years == 1) + int(human_years > 2)
     return [human_years,catYears[ x ],dogYears[ x ]]
+
+#Find numbers which are divisible by given number
+def divisible_by(numbers, divisor):
+    return list(filter(lambda number : number != -1 , [i if i% divisor == 0 else -1 for i in numbers]))
+
+#Will there be enough space?
+def enough(cap, on, wait):
+    return 0 if cap >= (on+wait) else (on+wait)-cap
+
+#Sum Mixed Array
+def sum_mix(arr):
+    return sum(int(number_to_int) for number_to_int in arr)
+
+#Filter out the geese
+geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
+
+def goose_filter(birds):
+    return list(filter(lambda word_in_geese_arr : word_in_geese_arr not in geese, birds))
+
+#Array plus array
+def array_plus_array(arr1,arr2):
+    return sum(arr1) + sum(arr2)
+
+#Twice as old
+def twice_as_old(dad_years_old, son_years_old):
+    return  2*son_years_old - dad_years_old if 2*son_years_old > dad_years_old else  dad_years_old - 2*son_years_old
+
+#Is this my tail?
+def correct_tail(body, tail):
+    sub = body[len(body)-len(tail)]
+    if sub == tail:
+        return True
+    else:
+        return False
+
+#Get Planet Name By ID
+def get_planet_name(id):
+    switch = {
+        1:"Mercury",
+        2:"Venus",
+        3:"Earth",
+        4:"Mars",
+        5:"Jupiter",
+        6:"Saturn",
+        7:"Uranus",
+        8:"Neptune",
+    }
+    return switch[id]
+     

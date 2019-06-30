@@ -6,4 +6,14 @@ def solution(number):
 def find_it(seq):
     return list(filter(lambda x: x != None,[seq[i] if seq.count(seq[i]) % 2 else None  for i in range(len(seq))]))[0]
 
-print(find_it([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]))
+#Sum of Digits / Digital Root
+def digital_root(n):
+    return digital_root(sum([int(d) for d in str(n)])) if len(str(n)) > 1 else sum([int(d) for d in str(n)])
+
+#Array.diff
+def array_diff(a, b):
+    return [item for item in a if item not in b]
+
+#Bit Counting
+def countBits(n):
+    return str(bin(n)).count('1')

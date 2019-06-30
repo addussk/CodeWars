@@ -35,3 +35,11 @@ def xo(s):
 def Descending_Order(num):
    return int(''.join(sorted(str(num),reverse = True)))
 
+#Beginner Series #3 Sum of Numbers
+def get_sum(a,b):
+   return a if a == b else sum([number for number in range( a if a < b else b,(b if b > a else a) + 1 )])
+
+#List Filtering
+def filter_list(l):
+   return list(filter(lambda element: isinstance(element,int) ,l))
+
