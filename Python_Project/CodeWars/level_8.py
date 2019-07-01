@@ -799,4 +799,28 @@ def get_planet_name(id):
         8:"Neptune",
     }
     return switch[id]
+
+#Vowel remover
+vowel_tab = ['a', 'e', 'i', 'o', 'u','y']
+def shortcut( inputStr ):
+     return "".join(letter for letter in inputStr if letter not in vowel_tab)
+
+#Sort and Star
+def two_sort(array):
      
+    return "".join(letter + "***" for letter in sorted(array)[0])[:-3]
+
+# print(two_sort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"])) #'b***i***t***c***o***i***n' )
+
+#Is the string uppercase?
+def is_uppercase(inp):
+    return True if inp.isupper() else False
+
+#Training JS #7: if..else and ternary operator
+def sale_hotdogs(n):
+    return 100*n if n < 5 else 95*n if n<10 else n*90 
+
+#All Star Code Challenge #18
+def str_count(string , letter):
+    return 0 if len(string) < 1 else string.count(letter)
+
