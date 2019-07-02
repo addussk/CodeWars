@@ -824,3 +824,18 @@ def sale_hotdogs(n):
 def str_count(string , letter):
     return 0 if len(string) < 1 else string.count(letter)
 
+#Hex to Decimal
+def hex_to_dec(s):
+    return  int(s,16)
+
+#Beginner Series #2 Clock
+def past(h, m, s):
+    return s*1000 + m*60*1000  + h*60*60*1000
+
+#Surface Area and Volume of a Box
+def get_size(w,h,d):
+    return [2*(w*h+w*d+d*h),w*h*d]
+
+#Grasshopper - Terminal game combat function
+def combat(health, damage):
+    return 0 if health - damage < 0 else health - damage
