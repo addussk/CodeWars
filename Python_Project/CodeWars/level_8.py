@@ -839,3 +839,112 @@ def get_size(w,h,d):
 #Grasshopper - Terminal game combat function
 def combat(health, damage):
     return 0 if health - damage < 0 else health - damage
+
+#Grasshopper - Grade book
+GRADE = {
+    100: 'A',
+    90 : 'A',
+    80 : 'B',
+    70 : 'C',
+    60 : 'D',
+}
+
+def get_grade(s1,s2,s3):
+    print(int(((s1+s2+s3)/3)/10)*10)
+    return 'F' if int(((s1+s2+s3)/3)/10)*10 not in GRADE else  GRADE[int(((s1+s2+s3)/3)/10)*10]
+
+# print(get_grade(70, 55, 100))
+GRADE_VOL2 = {
+    1: 'A',
+    0.9 : 'A',
+    0.8 : 'B',
+    0.7 : 'C',
+    0.6 : 'D',
+}
+#Grader
+def grader(score):
+    return 'F' if not 0.6 <= score <= 1 else GRADE_VOL2[int(score*10)/10]
+
+import math
+
+#Beginner Series #4 Cockroach
+def cockroach_speed(s):
+    return math.floor(s*1000/36)
+
+#repeatIt
+def repeat_it(string,n):
+    return "Not a string" if not isinstance(string,str) else "".join(string for i in range(0,n))
+
+# print(repeat_it("Not a string", 3))
+
+#Add Length
+# def add_length(string):
+#     return element + str(len(element))for element in string.split()
+#
+# print(add_length('apple ban'))
+
+#Grasshopper - Debug
+#from __future__ import division
+
+def weather_info(temp):
+    c = convertToCelsius(temp)
+    if (c > 0):
+        return (str(c) + " is above freezing temperature")
+    else:
+        return (str(c) + " is freezing temperature")
+
+
+def convertToCelsius(temperature):
+    celsius = (temperature - 32) * (5 / 9)
+    return celsius
+
+#Watermelon
+def divide(weight):
+    return True if  weight > 2 and not weight % 2 else False
+
+#Return to Sanity
+def mystery():
+    results = {
+        'sanity': 'Hello'
+    }
+    return results
+
+#Duck Duck Goose
+def duck_duck_goose(players, goose):
+    return players[(goose % len(players) -1)].name
+
+#Lario and Muigi Pipe Problem
+def pipe_fix(array):
+    return [element for element in range(min(array), max(array) + 1)]
+
+# Squash the bugs
+def find_longest(string):
+    spl = string.split(" ")
+    longest = 0
+
+    for i in range(0, len(spl)):
+        if (spl[i].__len__() > longest): longest = spl[i].__len__()
+
+    return longest
+
+#String Templates - Bug Fixing #5
+def build_string(*args):
+    return "I like {}!".format(", ".join(args))
+
+#Find out whether the shape is a cube
+def cube_checker(volume, side):
+    return False if ((volume <= 0  or side <= 0) or (side**3 != volume )) else True
+
+#Pre-FizzBuzz Workout #1
+def pre_fizz(n):
+    return [ i for i in range(1,n+1)]
+
+#Loading Kata: Remove duplicates from list
+def distinct(seq):
+    return sorted(set(seq), key = seq.index)
+
+thisset = {"apple", "banana", "apple", "cherry"}
+
+thisset.update(["orange", "mango", "grapes", "apple"])
+
+print(thisset)
