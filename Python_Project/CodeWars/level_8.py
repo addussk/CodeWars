@@ -947,9 +947,6 @@ thisset = {"apple", "banana", "apple", "cherry"}
 
 thisset.update(["orange", "mango", "grapes", "apple"])
 
-print(thisset)
-
-
 #Beginner Series #1 School Paperwork
 def paperwork(n, m):
     return n*m if (n> 0 and m > 0) else 0
@@ -1048,4 +1045,6 @@ dict_num_weekday = {
 def whatday(num):
     return "Wrong, please enter a number between 1 and 7" if num not in range(1,8)  else dict_num_weekday[num]
 
-
+#Grasshopper - Messi goals function
+def goals(*argv):
+    return sum(argv)
