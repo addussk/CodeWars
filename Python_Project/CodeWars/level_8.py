@@ -1048,4 +1048,4 @@ dict_num_weekday = {
 def whatday(num):
     return "Wrong, please enter a number between 1 and 7" if num not in range(1,8)  else dict_num_weekday[num]
 
-print(whatday(0))
+
