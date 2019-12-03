@@ -1060,3 +1060,27 @@ def how_many_dalmatians(n):
 #Grasshopper - Terminal game move function
 def move(position, roll):
     return position + 2*roll
+
+#Swap Values
+def swap_values(args): 
+    args[0], args[1] = args[1], args[0]
+    
+    return args
+
+#Well of Ideas - Easy Version
+def well(x):
+    return 'Fail!' if 'good' not in x else 'Publish!' if x.count('good') in range(1,3) else 'I smell a series!'
+
+#import numpy 
+#Difference of Volumes of Cuboids
+# def find_difference(a, b):
+#     return abs(numpy.prod(a) - numpy.prod(b))
+# todo: resolve problem with importing module
+
+#5 without numbers !!
+def unusual_five():
+    return len("asdfg")
+
+#A Strange Trip to the Market
+def is_lock_ness_monster(string):
+    return False if ( ("tree fiddy" not in string) and ("3.50" not in string) and ("three fifty" not in string) ) else True
