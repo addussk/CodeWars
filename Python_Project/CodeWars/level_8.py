@@ -840,7 +840,7 @@ def get_size(w,h,d):
 def combat(health, damage):
     return 0 if health - damage < 0 else health - damage
 
-#Grasshopper - Grade book
+#Grasshopper -  book
 GRADE = {
     100: 'A',
     90 : 'A',
@@ -1084,3 +1084,52 @@ def unusual_five():
 #A Strange Trip to the Market
 def is_lock_ness_monster(string):
     return False if ( ("tree fiddy" not in string) and ("3.50" not in string) and ("three fifty" not in string) ) else True
+
+#Remove First and Last Character Part Two
+def array(string):
+    if len(string) < 5:
+        return None
+    
+    else:
+        x = string[1:-1].replace(',',"")
+        return x[1:-1]
+
+#print(array('1,3,3'))
+import math
+def nearest_sq(n):
+    if math.ceil(math.sqrt(n))**2 == n:
+        return n
+    
+    else:
+        x1 = math.floor(math.sqrt(n))
+        x2 = math.ceil(math.sqrt(n))
+        
+        return math.pow(x1,2) if abs(math.pow(x1,2) - n) < abs(math.pow(x2,2) - n)  else math.pow(x2,2)
+ 
+#Check the exam
+def check_exam(arr1,arr2):
+    score = 0
+    for mergedElem in list(zip(arr1, arr2)):
+        score += 4 if mergedElem[0] == mergedElem[1] else 0 if mergedElem[0] == "" or mergedElem[1] == "" else -1
+
+    return 0 if score <= 0 else score
+
+#For UFC Fans (Total Beginners): Conor McGregor vs George Saint Pierre
+texArr = ["I am not impressed by your performance.", "I'd like to take this chance to apologize.. To absolutely NOBODY!"]
+
+def quote(fighter):
+    print(fighter.lower())
+    return texArr[0] if fighter.lower() == 'george saint pierre' else texArr[1]
+
+#Student's Final Grade
+def final_grade(exam, projects):
+    if exam >90 or projects >10:
+        return 100# final grade
+    elif exam >75 and projects >=5:
+        return 90# final grade
+    elif exam >50 and projects >=2:
+        return 75# final grade
+    elif exam <50 or projects <2 :
+        return 0# final grade
+    else:
+        return 0
