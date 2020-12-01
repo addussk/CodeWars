@@ -1133,3 +1133,98 @@ def final_grade(exam, projects):
         return 0# final grade
     else:
         return 0
+
+#noobCode 01: SUPERSIZE ME.... or rather, this integer!
+def super_size(num):
+    array = list(map(int, str(num)))
+    array.sort( reverse = True)
+    return int("".join([str(i) for i in array]))
+
+import numpy
+#Expressions Matter
+def expression_matter(*argv):
+    return max([ (list(argv)[0] * sum(list(argv)[1:])), numpy.prod(list(argv)), (list(argv)[0] + numpy.prod(list(argv)[1:])), sum(list(argv)[:2] * list(argv)[2]), sum(list(argv)) ] )
+
+#Find the first non-consecutive number
+def first_non_consecutive(arr):
+    for element in arr[1:]:
+        if element - 1 not in arr:
+            return element
+
+#Basic subclasses - Adam and Eve
+class Human:
+    def _init_(self):
+        pass
+
+class Man(Human):
+    pass
+
+class Woman(Human):
+    pass
+
+def God():
+    adam = Man()
+    eve = Woman()
+    return [adam,eve]
+
+#Palindrome Strings
+def is_palindrome(string):
+    covertedToString = str(string) 
+    return False if False in [True if covertedToString[pos] == covertedToString[-1-pos] else False for pos in range(int(len(covertedToString)/2))] else True
+
+#Area or Perimeter
+def area_or_perimeter(l , w):
+    return l*l if l == w else 2*w + 2*l
+
+#No zeros for heros
+def no_boring_zeros(n):
+    while(1):
+        if n % 10:
+            break
+        n = n / 10
+        
+    return int(n)
+
+#Hello, Name or World!
+def hello(name = None):
+    return "Hello, World!" if name is None else "Hello, World!" if len(name) < 1 else  "Hello, {}!".format("".join([name[0].upper(), name[1:].lower()]))
+
+#Simple validation of a username with regex
+def validate_usr(username):
+    retVal = False
+    if 3 < len(username) < 17:
+        for element in username:
+            if ord(element) == 95 or (ord(element) < 123 and 95 < ord(element)) or ( 47 < ord(element) < 58):
+                retVal = True
+            else: 
+                retVal = False
+                break
+                
+    return retVal
+
+#To square(root) or not to square(root)
+def square_or_square_root(arr):
+    return [int(element**(1/2)) if ((element**(1/2))*element)%element == 0 else element**2 for element in arr]
+    
+#Filling an array (part 1)
+def arr(n = 0): 
+    return [number for number in range(n)] if n > 0 else []
+
+#Printing Array elements with Comma delimiters
+def print_array(arr):
+    return ",".join([str(element) for element in arr])
+
+#The falling speed of petals
+def sakura_fall(v):
+    return  400/v if v >0 else 0
+
+#Triple Trouble
+def triple_trouble(one, two, three):
+    return "".join("".join(a) for a in zip(one, two, three))
+    # return "".join(one[i] + two [i] + three[i] for i in range(len(one)))
+
+#What's the real floor?
+def get_real_floor(n):
+    return n if n < 0 else 0 if n in [0,1] else n - 1 if n < 13 else n - 2
+    
+print(triple_trouble("aaa","bbb","ccc"))
