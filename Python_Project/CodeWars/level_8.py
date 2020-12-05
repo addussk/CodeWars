@@ -1227,4 +1227,66 @@ def triple_trouble(one, two, three):
 def get_real_floor(n):
     return n if n < 0 else 0 if n in [0,1] else n - 1 if n < 13 else n - 2
     
-print(triple_trouble("aaa","bbb","ccc"))
+#Find the Difference in Age between Oldest and Youngest Family Members
+def difference_in_ages(ages):
+    return ( min(ages), max(ages), max(ages) - min(ages))
+
+#Grasshopper - Function syntax debugging
+def main(verb, noun):
+    return verb + noun
+
+#A wolf in sheep's clothing
+def warn_the_sheep(queue):
+    return 'Pls go away and stop eating my sheep' if 0 == (queue.index('wolf') + 1 - len(queue)) else 'Oi! Sheep number {}! You are about to be eaten by a wolf!'.format(queue.__len__() - queue.index('wolf') - 1)
+
+#Grasshopper - Messi Goals
+la_liga_goals = 43
+champions_league_goals = 10
+copa_del_rey_goals = 5
+
+total_goals = la_liga_goals + champions_league_goals + copa_del_rey_goals
+
+#Is it even?
+def is_even(n): 
+    return True if not n%2 else False
+
+#Removing Elements
+def remove_every_other(my_list):
+    array = []
+    index = 0
+    for parametr in my_list:
+        if not index % 2:
+            array.append(parametr)
+        index += 1
+    return array
+
+#N-th Power
+def index(array, n):
+    return -1 if n >= len(array) else array[n]**n
+
+
+#Grasshopper - Check for factor
+def check_for_factor(base, factor):
+    return True if base // factor == base / factor else False
+
+# Remove duplicates from list
+def dup_distinct(seq):
+    cloneArray = []
+    for elem in seq:
+        if elem not in cloneArray:
+            cloneArray.append(elem)
+    return cloneArray
+
+#Smallest unused ID
+def next_id(arr):
+    for idx in range(0, len(arr)):
+        if idx not in arr:
+            break
+        if arr[-1] == idx:
+            idx +=1
+
+    return idx
+
+print(next_id([0,0,1,2,3,4,5,6,7,8,9,10,11]))
+
+
