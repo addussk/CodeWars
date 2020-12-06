@@ -1287,6 +1287,47 @@ def next_id(arr):
 
     return idx
 
-print(next_id([0,0,1,2,3,4,5,6,7,8,9,10,11]))
+#L1: Bartender, drinks!
+drinks_dic = {
+    "jabroni": "Patron Tequila",
+    "school counselor": "Anything with Alcohol",
+    "programmer":"Hipster Craft Beer",
+    "bike gang member": "Moonshine",
+    "politician": "Your tax dollars",
+    "rapper": "Cristal",
+    "anything else": "Beer"
+}
+def get_drink_by_profession(param):
+    return drinks_dic['anything else'] if param.lower() not in drinks_dic else  drinks_dic[param.lower()]
+
+#Subtract the sum
+def subtract_sum(number):
+    return "apple"
+
+# The Wide-Mouthed frog!
+def mouth_size(animal): 
+  return "small" if animal.lower() == "alligator" else "wide"
+
+# Remove First and Last Character Part Two
+def array(strng):
+    return ' '.join(strng.split(',')[1:-1]) or None
+
+# Find Multiples of a Number
+def find_multiples(integer, limit):
+    return  [ x for x in range( integer, limit+1, integer)]
+
+# Tip Calculator
+tip_dic = {
+    "terrible":  0,
+    "poor":  0.05,
+    "good":  0.1,
+    "great":  0.15,
+    "excellent":  0.2,
+}
+
+def calculate_tip(amount, rating):
+    return 'Rating not recognised' if rating.lower() not in tip_dic else math.ceil(amount * tip_dic[rating.lower()])  
+    
+print(calculate_tip(107.65, "GReat"))
 
 
