@@ -1327,7 +1327,100 @@ tip_dic = {
 
 def calculate_tip(amount, rating):
     return 'Rating not recognised' if rating.lower() not in tip_dic else math.ceil(amount * tip_dic[rating.lower()])  
+
+# Enumerable Magic #25 - Take the First N Elements
+def take(arr,n):
+    return arr[:n]
+
+# Quarter of the year
+def quarter_of(month):
+    return 1 if month < 4 else 2 if month < 7 else 3 if month < 10 else 4
+
+# Thinkful - Number Drills: Blue and red marbles
+def guess_blue(blue_start, red_start, blue_pulled, red_pulled):
+    return (blue_start - blue_pulled) / ( (red_start - red_pulled) + (blue_start - blue_pulled) )
+
+# Classic Hello World
+class Solution:
     
-print(calculate_tip(107.65, "GReat"))
+    def main(*args):
+        print("Hello World!")
+        pass
+
+# SpeedCode #2 - Array Madness
+def array_madness(a,b):
+    return True if sum( [ (lambda x: x**2)(x) for x in a ] )  > sum( [ (lambda c: c**3)(c) for c in b ] ) else False
+
+# What is between?
+def between(a,b):
+    return [x for x in range(a,b+1)]
+
+# Add Length
+def add_length(str_):
+    return [x+" "+ str(len(x)) for x in str_.split(" ")]
+
+#Palindrome Strings
+def is_palindrome(string):
+    covertedToString = string.lower() 
+    return False if False in [True if covertedToString[pos] == covertedToString[-1-pos] else False for pos in range(int(len(covertedToString)/2))] else True
+
+# Barking mad
+class Dog ():
+    def __init__(self, breed):
+        self.breed = breed
+    def bark(self):
+        return "Woof"  
+    
+    
+
+snoopy = Dog("Beagle")
+
+snoopy.bark = lambda: "Woof"
+
+scoobydoo = Dog("Great Dane")
+
+# Super Duper Easy
+def problem(a):
+    try:
+        input = int(a)
+        return a*50 +6
+    except ValueError:
+        try:
+            input = float(a)
+            return a*50 +6
+        except ValueError:
+            return "Error"
+
+# Grasshopper - Array Mean
+def find_average(nums):
+    try:
+        return sum(array) / len(array)
+    except ZeroDivisionError:
+        return 0
+
+# Parse float
+def parse_float(string):
+    try:
+        return float(string)
+    except:
+        return None
+
+# Multiple of index
+def multiple_of_index(l):
+    return [l[i] for i in range(1, len(l)) if l[i] % i == 0]
+
+# Holiday VI - Shark Pontoon
+def shark(pontoon_distance, shark_distance, you_speed, shark_speed, dolphin):
+    if ((pontoon_distance / you_speed) >= (shark_distance / (shark_speed / (2 if dolphin  else 1)))):
+        return 'Shark Bait!'
+    else:
+        return 'Alive!'
+
+# Alan Partridge II - Apple Turnover
+def apple(x):
+    return "It's hotter than the sun!!" if int(x)**2 > 1000 else "Help yourself to a honeycomb Yorkie for the glovebox."
 
 
+
+
+print(shark(33, 115, 2, 20, True))
