@@ -1420,7 +1420,159 @@ def shark(pontoon_distance, shark_distance, you_speed, shark_speed, dolphin):
 def apple(x):
     return "It's hotter than the sun!!" if int(x)**2 > 1000 else "Help yourself to a honeycomb Yorkie for the glovebox."
 
+# How do I compare numbers?
+def what_is(x):
+    if x == 42:
+        return 'everything'
+    elif x == (42**2) :
+        return 'everything squared'
+    else:
+        return 'nothing'
+
+# Multiplication table for number
+def multi_table(number):
+    return "".join( "{} * {} = {}\n".format(el,number,str(el*number))  for el in range(1,10) ) + "{} * {} = {}".format(10,number,str(10*number))
+
+# Closest elevator
+def elevator(left, right, call):
+    return "right" if ( abs(right-call) <= abs(left-call) ) else "left"
+
+# Leonardo Dicaprio and Oscars
+def leo(oscar):
+    return "Leo finally won the oscar! Leo is happy" if oscar == 88 else "Not even for Wolf of wallstreet?!" if oscar == 86 else "Leo got one already!" if oscar > 88 else "When will you give Leo an Oscar?"
+
+# get ascii value of character
+def get_ascii(c):
+    return ord(c)
+
+# Take the Derivative
+def derive(coefficient, exponent): 
+    return "{}x^{}".format((coefficient * exponent),(exponent - 1))
+
+# Sum The Strings
+def sum_str(a, b):
+    return "0" if not a and not b else a if not b else b if not a else  str(int(a) + int(b))
+
+# Is it a number?
+def isDigit(string):
+    for remChar in ['.']:
+        string = string.replace(remChar,"")
+    
+    try:
+        val = int(string)
+        return True
+    except ValueError:
+        return False
+
+# No Loops 2 - You only need one
+def check(a, x): 
+    return True if x in a else False
+
+# Area of a Square
+def square_area(A):
+    return round((((A*4)/(2*math.pi))**2),2)
+
+# simple calculator
+def calculator(x,y,op):
+    try:
+        if op == "+":
+            return int(x)+int(y)
+        elif op == "-":
+            return int(x)-int(y)
+        elif op == "*":
+            return int(x)*int(y)
+        elif op == "/":
+            return int(x)/int(y)
+        else: return "unknown value"
+    except:
+        return "unknown value"
+
+# validate code with simple regex
+def validate_code(code):
+    return str(code).startswith(('1','2','3'))
+
+# Who is going to pay for the wall?
+def who_is_paying(name):
+    return [name, name[:2]] if len(name) > 2 else [name]
+
+# Remove the time
+def shorten_to_date(long_date):
+    return long_date.split(',')[0]
+
+# Object Oriented Piracy
+class Ship:
+    def __init__(self, draft, crew):
+        self.draft = draft
+        self.crew = crew
+    
+    def is_worth_it(self):
+        return True if (self.draft - self.crew*1.5 ) > 20 else False
+
+# Find the Integral
+def integrate(coefficient, exponent):
+    return "{}x^{}".format(( coefficient // (1 + exponent)),(exponent + 1))
+
+# Sum of Multiples
+def sum_mul(n, m):
+    try:
+        if( n > 0 and m > 0 ):
+            return sum([num for num in range(n,m,n)])
+        else: return "INVALID"
+    except:
+        return "INVALID"
+
+# 8kyu interpreters: HQ9+
+LINES = "{0} of beer on the wall, {0} of beer.\nTake one down and pass it around, {1} of beer on the wall."
+SONG = '\n'.join( LINES.format("{} bottles".format(n), "{} bottle".format(n-1)+"s"*(n!=2)) for n in range(99,1,-1) )
+SONG += """
+1 bottle of beer on the wall, 1 bottle of beer.
+Take one down and pass it around, no more bottles of beer on the wall.
+No more bottles of beer on the wall, no more bottles of beer.
+Go to the store and buy some more, 99 bottles of beer on the wall."""
+
+def HQ9(code):
+    return {'H': 'Hello World!', 'Q': 'Q', '9': SONG}.get(code, None)
+
+# Find the Slope
+def find_slope(points):
+    try:
+        return str((points[3] - points[1]) // (points[2] - points[0]))
+    except:
+        return "undefined"
+
+# Find the position!
+def position(alphabet):
+    return "Position of alphabet: {}".format(dictionary[alphabet])
+
+# Fix the Bugs (Syntax) - My First Kata
+def my_first_kata(a,b):
+    try:
+        if(type(a) is int and type(b) is int):
+            return a % b + b % a
+        else: return False
+    except:
+        return False
+
+# Incorrect division method
+def divide_numbers(x,y):
+    return x / y
+
+# Exclamation marks series #2: Remove all exclamation marks from the end of sentence
+def remove(s):
+    temp_arr =  s[::-1]
+    counter = 0
+    for el in temp_arr:
+        if el == "!":
+            counter -=1
+        else: break
+    return s[:counter] if counter else s
+
+
+print(remove("Hi! Hi!"))
 
 
 
-print(shark(33, 115, 2, 20, True))
+
+
+
+
