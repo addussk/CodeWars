@@ -1567,8 +1567,80 @@ def remove(s):
         else: break
     return s[:counter] if counter else s
 
+# FIXME: Replace all dots
+import re
+def replace_dots(s):
+    return re.sub(r"\.", "-", s)
 
-print(remove("Hi! Hi!"))
+# Switch/Case - Bug Fixing #6
+def eval_object(v):
+    return {"+": v['a']+v['b'],
+        "-": v['a']-v['b'],
+        "/": v['a']/v['b'],
+        "*": v['a']*v['b'],
+        "%": v['a']%v['b'],
+        "**": v['a']**v['b'], }.get(v['operation'],1)
+
+# Online RPG: player to qualifying stage?
+def playerRankUp(pts):
+     return False if pts < 100 else "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up."
+
+# Merge two sorted arrays into one
+def merge_arrays(arr1, arr2):
+    seen = set()
+    return [x for x in sorted(arr1 + arr2) if x not in seen and not seen.add(x)]
+  
+# Classy Classes
+class Person:
+    def __init__(self,name,age):
+        self.info="{}s age is {}".format(name,age)
+
+# Man in the west
+def check_the_bucket(bucket):
+    return True if "gold" in bucket else False
+
+# Wilson primes
+def am_i_wilson(n):
+    return True if n in (5,13,563) else False
+
+# Classy Extensions
+class Cat:
+    def __init__(self, name):
+        self.name = name
+    def speak(self):
+        return "{} meows.".format(self.name)
+
+# Evil or Odious
+def evil(n):
+    return "It's Odious!" if bin(n)[2:].count("1") % 2 else "It's Evil!"
+
+# Is there a vowel in there?
+def is_vow(inp):
+    return [ chr(el) if el in (97, 101, 105, 111, 117) else el for el in inp  ]
+
+# Grasshopper - Variable Assignment Debug
+a = "dev"
+b = "Lab"
+
+name = a + b
+
+# Polish alphabet
+dic_polish_letter = {
+    'ą' : 'a',
+    'ć' : 'c',
+    'ę' : 'e',
+    'ł' : 'l',
+    'ń' : 'n',
+    'ó' : 'o',
+    'ś' : 's',
+    'ź' : 'z',
+    'ż' : 'z',
+}
+def correct_polish_letters(st): 
+    return "".join([el if el not in ('ą', 'ć', 'ę', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż') else  dic_polish_letter[el] for el in st ])
+
+
+print(correct_polish_letters("Jędrzej Błądziński"))
 
 
 
