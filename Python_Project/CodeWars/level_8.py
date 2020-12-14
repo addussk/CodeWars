@@ -1639,8 +1639,108 @@ dic_polish_letter = {
 def correct_polish_letters(st): 
     return "".join([el if el not in ('ą', 'ć', 'ę', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż') else  dic_polish_letter[el] for el in st ])
 
+# Price of Mangoes
+def mango(quantity, price):
+    return quantity * price - quantity // 3 * price
 
-print(correct_polish_letters("Jędrzej Błądziński"))
+# Finish Guess the Number Game
+class Guesser:
+    def __init__(self, number, lives):
+        self.number = number
+        self.lives = lives
+    
+    def guess(self,n):
+        try:
+            if self.lives > 0:
+                if n == self.number:
+                    return True
+                else: 
+                    self.lives -= 1
+                    return False
+            else:
+                    raise ValueError('Expect error: "Omae wa mo shindeiru"')
+        except ValueError as ve:
+            raise Error(ve)
+
+# Who ate the cookie?
+def cookie(x):
+    try:
+        len(x)
+        return "Who ate the last cookie? It was Zach!"
+    except:
+        if x == True or x == False:
+            return "Who ate the last cookie? It was the dog!"
+        return "Who ate the last cookie? It was Monica!"
+
+# Get number from string
+def get_number_from_string(string):
+    return int("".join( [el for el in string if ord(el) < 58 and ord(el) > 47] ) )
+
+# Pillars
+def pillars(num_pill, dist, width):
+    return (num_pill - 1) * dist * 100 + (num_pill - 2)*width if num_pill > 1 else 0
+
+# Character Frequency
+def char_freq(message):
+    dic = {}
+    for el in message:
+        dic[el] = message.count(el)
+    return dic
+
+# Grasshopper - Create the rooms
+rooms = {
+  'firstRoom': {
+    'name': 'Saw I',
+    'description': 'Easy level',
+    'completed': True,
+  },
+  'secondRoom': {
+    'name': 'Saw II',
+    'description': 'Medium level',
+    'completed': False,
+  },
+  'thirdRoom': {
+    'name': 'Saw III',
+    'description': 'Hardcore level',
+    'completed': None,
+  }
+}
+
+# Unexpected parsing
+def get_status(is_busy):
+    if is_busy:
+        status = "busy"  
+    else: 
+        status = "available"
+    return { 'status': status}
+
+# Chuck Norris VII - True or False? (Beginner)
+def ifChuckSaysSo():
+    return bool(0)
+
+# Fuel Calculator
+def fuel_price(litres, price_per_litre):
+    if litres >= 10:
+        disc = 0.25
+    elif litres >= 8:
+        disc = 0.20
+    elif litres >= 6:
+        disc = 0.15
+    elif litres >= 4:
+        disc = 0.1
+    elif litres >= 2:
+        disc = 0.5
+    else: disc = 0
+    return litres * ( price_per_litre - disc) 
+
+# What's wrong with these identifiers?
+Person = {
+  '1stname': "John",
+  'second-name': "Doe",
+  'email@ddress': "john.doe@email.com",
+  'male.female': "M"
+}
+print(Person.keys())
 
 
 
