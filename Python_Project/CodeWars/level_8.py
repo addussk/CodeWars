@@ -1740,11 +1740,66 @@ Person = {
   'email@ddress': "john.doe@email.com",
   'male.female': "M"
 }
-print(Person.keys())
+
+# Fix your code before the garden dies!
+def rain_amount(mm):
+    if (mm < 40):
+         return "You need to give your plant " + str(40 - mm) + "mm of water"
+    else:
+         return "Your plant has had more than enough water for today!"
+
+# Draw stairs
+def draw_stairs(n):
+    return ("".join("".join(" " for e in range(i)) + "I\n" for i in range(n) ))[:-1]
+
+# Gravity Flip
+def flip(d, a):
+    return sorted(a) if d == 'R' else sorted(a)[::-1]
+
+# Grasshopper - Terminal Game Turn Function
+def do_turn():
+    roll_dice()
+    move()
+    combat()
+    get_coins()
+    buy_health()
+    print_status()
+
+# NBA full 48 minutes average
+def nba_extrap(ppg, mpg):
+    return 0 if not mpg else round((ppg * (48/mpg)), 1)
+
+# Multiply the number
+def multiply(n):
+    return pow(5,len(str(abs(n))))*n
+
+# Localize The Barycenter of a Triangle
+def bar_triang(pointA, pointB, pointC): # points A, B and C will never be aligned
+    # your code here
+    return [ round((pointA[0] + pointB[0] + pointC[0])/3, 4), round((pointA[1] + pointB[1] + pointC[1])/3, 4)] # coordinates of the barycenter expressed up to four decimals
+                    # (rounded result)
+
+# Collatz Conjecture (3n+1)
+def hotpo(n):
+    iter = 0
+    while n != 1:
+        if n % 2 :
+            n = 3*n + 1  
+        else:
+            n = n / 2
+        iter += 1
+        
+    return iter
 
 
+# Logical calculator
+def logical_calc(array, op):
+    if op == 'AND':
+        return False if False in array else True
+    if op == 'OR':
+        return True if True in array else False
+    if op == 'XOR':
+        return True if array.count(True) % 2 else False
+    
 
-
-
-
-
+print(logical_calc([False, False, True, False, True], "AND"))
