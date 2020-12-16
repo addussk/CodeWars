@@ -1801,5 +1801,75 @@ def logical_calc(array, op):
     if op == 'XOR':
         return True if array.count(True) % 2 else False
     
+# Heads and Legs
+def animals(heads, legs):
+    return (0,0) if (heads == 0 and legs == 0) else "No solutions" if (heads <= 0 or legs <= 0) else ( (heads - (0.5*legs - heads)) , (0.5* legs - heads) ) if ( (round(legs/2 - heads) == (legs/2 - heads) ) and (heads - (0.5*legs - heads) >= 0 ) and ((0.5* legs - heads) >= 0 )) else "No solutions"
 
-print(logical_calc([False, False, True, False, True], "AND"))
+# Coefficients of the Quadratic Equation
+def quadratic(x1, x2):
+    return (1, -1*(x1 + x2), x1*x2)
+
+# What's up next?
+def next_item(xs, item):
+    try:
+        x = None
+        while (1):
+            xs = iter(xs)
+            x = next(xs, None)
+            if x == None:
+                break
+            elif x == item:
+                return next(xs)
+        return next(xs, None)
+    except:
+        return None
+    
+
+# Grasshopper - Bug Squashing
+health = 100
+position = 0
+coins = 0
+
+def main():
+    roll_dice()
+    move()
+    combat()
+    get_coins()
+    buy_health()
+    print_status()
+
+# BASIC: Making Six Toast.
+def six_toast(num):
+    return abs(6 - num)
+
+# Compare within margin
+def close_compare(a, b, margin = 0):
+    return 0 if margin >= abs(a-b) else -1 if a < b else 1 if b < a else 0
+
+# Grasshopper - Terminal Game #1
+class Hero(object):
+    def __init__(self, name = 'Hero', pos = '00', hp = 100, dmg = 5, exp = 0):
+        self.name = name
+        self.position = pos
+        self.health = hp
+        self.damage = dmg
+        self.experience = exp
+        pass
+
+# Age Range Compatibility Equation
+import math
+def dating_range(age):
+    return "{}-{}".format(math.floor(age/2+7), (age - 7)*2 ) if age >= 14 else "{}-{}".format(math.floor(age - 0.1 * age), math.floor(age + 0.1 * age) )
+
+# Count the number of cubes with paint on
+def count_squares(cuts):
+    return pow(cuts+1,3) - pow(cuts-1,3)
+
+# Pirates!! Are the Cannons ready!??
+def cannons_ready(gunners):
+    return 'Fire!' if 'nay' not in [gunners.get(el) for el in gunners] else 'Shiver me timbers!'
+
+
+
+
+print(next_item(iter(range(1, 20)), 12))
