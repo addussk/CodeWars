@@ -1869,7 +1869,63 @@ def count_squares(cuts):
 def cannons_ready(gunners):
     return 'Fire!' if 'nay' not in [gunners.get(el) for el in gunners] else 'Shiver me timbers!'
 
+# Did she say hallo?
+import re
+def validate_hello(greetings):
+    x = ['hello', 'ciao', 'salut', 'hallo', 'hola', 'ahoj', 'czesc']
+    return True if [ re.search(el,greetings.lower())  for el in x if re.search(el,greetings.lower()) != None]  else False
 
+# Unicode Total
+def uni_total(string):
+    return sum([ ord(letter) for letter in string ])
 
+# Merging sorted integer arrays (without duplicates)
+def merge_arrays(arr1, arr2):
+    seen = set()
+    return [x for x in sorted(arr1 + arr2) if x not in seen and not seen.add(x)]
+
+# Define a card suit
+def define_suit(card):
+    return 'clubs' if 'C' in card else 'diamonds' if 'D' in card else 'hearts' if 'H' in card else 'spades'
+
+# Thinkful - Dictionary drills: Order filler
+def fillable(stock, merch, n):
+    try:
+        return True if n <= stock[merch] else False
+    except:
+        return False
+
+# Simple Fun #261: Whose Move
+def whoseMove(lastPlayer, win):
+    dic = {
+        'black' : "white",
+        'white' : "black",
+    }
+    return dic[lastPlayer] if not win else lastPlayer
+
+# Is your period late?
+import datetime
+
+def period_is_late(last,today,cycle_length):
+    return (today - last).total_seconds()/60/60/24 > cycle_length
+
+# Playing with cubes II
+class Cube(object):
+    # This cube needs help
+    # Define a constructor which takes one integer, or handles no args
+    def __init__(self, side = 0):
+        self._side = abs(side)
+        
+    def get_side(self):
+        """Return the side of the Cube"""
+        return self._side
+
+    def set_side(self, new_side):
+        """Set the value of the Cube's side."""
+        self._side = abs(new_side)
+
+# Days in the year
+def year_days(year):
+    return str(year) + ' has 365 days' if year % 4 or ( not year % 100 and year % 400) else str(year) + ' has 366 days'
 
 print(next_item(iter(range(1, 20)), 12))

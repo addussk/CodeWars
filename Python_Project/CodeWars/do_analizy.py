@@ -22,4 +22,10 @@ def animals(heads, legs):
     ch, co = 2 * heads - legs / 2, legs / 2 - heads
     return (0, 0) if heads == 0 and legs == 0 else (ch, co) if ch == int(ch) and co == int(co) and ch >= 0 and co >= 0 else 'No solutions'
 
+# Did she say hallo?
+def validate_hello(greetings):
+    return any(x in greetings.lower() for x in ['hello','ciao','salut','hallo','hola','ahoj','czesc'])
 
+# Training JS #18: Methods of String object--concat() split() and its good friend join()
+def split_and_merge(string_, separator):
+    return # your code here
