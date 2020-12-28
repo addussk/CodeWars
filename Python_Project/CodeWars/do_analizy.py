@@ -29,3 +29,7 @@ def validate_hello(greetings):
 # Training JS #18: Methods of String object--concat() split() and its good friend join()
 def split_and_merge(string_, separator):
     return # your code here
+
+
+def any_arrows(arrows):
+    return any(not i.get("damaged", False) for i in arrows)

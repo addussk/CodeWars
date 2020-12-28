@@ -1927,5 +1927,219 @@ class Cube(object):
 # Days in the year
 def year_days(year):
     return str(year) + ' has 365 days' if year % 4 or ( not year % 100 and year % 400) else str(year) + ' has 366 days'
+    
+# Geometry Basics: Distance between points in 2D
+def distance_between_points(a, b):
+    return ((a.x - b.x)**2 + (a.y - b.y)**2)**(1/2)
 
-print(next_item(iter(range(1, 20)), 12))
+# Contamination #1 -String-
+def contamination(text, char):
+    return "" if (not text) or (not char) else "".join( char for letter in text )
+
+# Calculate Price Excluding VAT
+def excluding_vat_price(price):
+    return -1 if not price else round( ( price/1.15 ),2)
+
+# Are there any arrows left?
+def any_arrows(arrows):
+    counter = 0
+    if not arrows:
+        return False
+    for dic in arrows:
+        if 'damaged' not in dic.keys():
+            counter += 1
+        elif dic.get('damaged') == False:
+            counter += 1
+        
+    if counter:
+        return True
+    else: return False
+
+# Pythagorean Triple
+def pythagorean_triple(integers):
+    integers = sorted(integers)
+    return True if integers[2]**2 == integers[0]**2 + integers[1]**2 else False
+
+# Sort My Textbooks
+def sorter(textbooks):
+    return sorted(textbooks, key=lambda x: x.lower())
+
+# Job Matching #1
+def match(candidate, job):
+    return True if candidate['min_salary']*0.9 <= job['max_salary'] else False
+
+# Geometry Basics: Circle Circumference in 2D
+def circle_circumference(circle):
+    return 2*circle.radius*math.pi
+
+# Name on billboard
+def billboard(name, price=30):
+    cost = 0
+    for letter in name:
+        cost += price
+        
+    return cost
+
+# Simple Fun #352: Reagent Formula
+def isValid(formula):
+    return True if (7 in formula or 8 in formula) and ( ( 3 in formula and 4 not in formula) or ( 3 not in formula and 4 in formula) or ( 3 not in formula and 4 not in formula)) and (( 1 in formula and 2 not in formula) or ( 1 not in formula and 2 in formula) or (1 not in formula and 2 not in formula)) and ( (5 in formula and 6 in formula) or (5 not in formula and 6 not in formula) )  else False
+
+
+# Freudian translator
+def to_freud(sentence):
+    return " ".join( 'sex' for el in sentence.split())
+
+# easy logs
+def logs(x, a, b):
+    return math.log(a,x) + math.log(b,x)
+
+# Fix the loop!
+def list_animals(animals):
+    list = ''
+    for i in range(len(animals)):
+        list += str(i + 1) + '. ' + animals[i] + '\n'
+    return list
+
+
+# Geometry Basics: Circle Area in 2D
+def circle_area(circle):
+    return circle.radius**2*math.pi
+
+# Add new item (collections are passed by reference)
+def add_extra(list_of_numbers):
+    try:
+        return [ number for number in range((len(list_of_numbers) + 1)) ] 
+    except:
+        return [1]
+
+# Fundamentals: Return
+def add(a,b):
+    return a+b
+
+def multiply(a,b):
+    return a*b
+
+def divide(a,b):
+    return a/b
+
+def mod(a,b):
+    return a%b
+
+def exponent(a,b):
+    return a**b
+
+def subt(a,b):
+    return a-b
+
+# Points of Reflection
+def symmetric_point(p, q):
+    # your code here
+    return [ q[0]- p[0] + q[0], q[1]- p[1] + q[1]]
+
+# Greek Sort
+greek_alphabet = (
+    'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 
+    'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 
+    'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma',
+    'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega')
+def greek_comparator(lhs, rhs):
+    if lhs == rhs:
+        return 0 
+    
+    for idx in greek_alphabet:
+        if idx == lhs:
+            return -1
+        if idx == rhs:
+            return 1
+
+# Pole Vault Starting Marks
+def starting_mark(height):
+    return round((1.22/0.31)*height + (9.45 - (1.22/0.31)*1.52), 2)
+
+# Training JS #32: methods of Math---round() ceil() and floor()
+def round_it(n):
+    arr = str(n).split('.')
+    return math.ceil(n) if len(arr[0]) < len(arr[1]) else math.floor(n) if len(arr[0]) > len(arr[1]) else round(n)
+
+# Enumerable Magic #30 - Split that Array!
+def partition(arr, classifier_method):
+    list2 = []
+    for i in arr:
+        if(i not in list(filter(classifier_method, arr))):
+            list2.append(i)
+            
+    return (list(filter(classifier_method, arr)), list2)
+
+#How much water do I need?
+def how_much_water(water, load, clothes):
+    return "Too much clothes" if clothes> (2*load) else  'Not enough clothes' if clothes < load else round(water*1.1**(clothes - load), 2)
+
+# Find the force of gravity between two objects
+def solution(arr_val, arr_unit) :
+    G = 6.67*10**(-11)
+    cal_unit = {
+        "kg": 1,
+        "g" : 0.001,
+        "mg" : (1*10**(-6)),
+        "μg" : (1*10**(-9)),
+        "lb" : 0.453592,
+        "m" : 1,
+        "cm" : 0.01,
+        "mm" : (1*10**(-3)),
+        "μm" : (1*10**(-6)),
+        "ft" : 0.3048,
+    }
+    return G*( (arr_val[0] * cal_unit[arr_unit[0]]) * (arr_val[1] * cal_unit[arr_unit[1]]) )/((arr_val[2] * cal_unit[arr_unit[2]])**2 )
+
+# Generate user links 
+import urllib.parse
+def generate_link(user):
+    return 'http://www.codewars.com/users/' + urllib.parse.quote(user)
+
+# Return Two Highest Values in List
+def two_highest(arg1):
+    retArr = []
+    try:
+        arg1 = set(arg1)
+        highest1 = max(arg1)
+        retArr.append(max(arg1))
+        arg1.remove(highest1)
+        if len(arg1):
+            retArr.append(max(arg1))
+        return retArr
+    except:
+        return []
+
+# Floating point comparison
+def approx_equals(a, b):
+    return abs(a-b) < 0.001
+
+# Invalid Login - Bug Fixing #11
+def validate(username, password):
+    if (password.find('||') > -1 or password.find('//') > -1):
+        return 'Wrong username or password!'
+    # function from kata
+    # database = Database()
+    # return database.login(username, password)
+
+# Crash Override
+def alias_gen(f_name, l_name):
+    if ((64 < ord(f_name[0]) and ord(f_name[0]) < 91) or (96 < ord(f_name[0]) and ord(f_name[0]) < 123)) and ((64 < ord(l_name[0]) and ord(l_name[0]) < 91) or (96 < ord(l_name[0]) and ord(l_name[0]) < 123)):
+        return FIRST_NAME[f_name[0].upper()] + " " + SURNAME[l_name[0].upper()]
+    else: return 'Your name must start with a letter from A - Z.'
+
+# Training JS #18: Methods of String object--concat() split() and its good friend join()
+def split_and_merge(string_, separator):
+    return " ".join( separator.join(letter for letter in element) for element in string_.split() )
+
+# Convert to Binary
+def to_binary(n):
+    return int(str(bin(n)).replace('0b',""))
+
+# For Twins: 2. Math operations
+def ice_brick_volume(radius, bottle_length, rim_length):
+    return ((2*radius)**2)/2 * (bottle_length - rim_length)
+
+# CSV representation of array
+def toCsvText(array) :
+    return "\n".join( ",".join( str(elem) for elem in list) for list in array )
