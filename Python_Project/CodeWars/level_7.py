@@ -43,3 +43,51 @@ def get_sum(a,b):
 def filter_list(l):
    return list(filter(lambda element: isinstance(element,int) ,l))
 
+# Disemvowel Trolls
+def disemvowel(string):
+    return "".join( letter for letter in string if letter.lower() not in "aeiou")
+
+# Square Every Digit
+def square_digits(num):
+    return int("".join( str(pow) for pow in [ int(element)**2 for element in str(num) ]) )
+
+# Jaden Casing Strings
+def to_jaden_case(string):
+    return " ".join( element.capitalize() for element in string.split() )
+
+# Isograms
+def is_isogram(string):
+    if string != "":
+        seen = set()
+        arr = []
+        for let in string:
+            seen.add(let.lower())
+            arr.append(let.lower())
+        
+        return len(arr) == len(seen)
+    else: return True
+
+# Sum of two lowest positive integers
+def sum_two_smallest_numbers(numbers):
+    return sum(sorted(numbers)[:2])
+
+# Growth of a Population
+def nb_year(p0, percent, aug, p):
+    sum, iter = p0, 0
+    while(sum < p):
+        iter += 1
+        sum = sum + sum*(percent/100) + aug
+        
+    return iter 
+
+# Credit Card Mask
+def maskify(cc):
+    print(len(cc))
+    retVal = ""
+    for idx in range(len(cc) - 4):
+        retVal = retVal + '#'
+    return retVal + cc[-4:]
+
+# Is this a triangle?
+def is_triangle(a, b, c):
+    return False
