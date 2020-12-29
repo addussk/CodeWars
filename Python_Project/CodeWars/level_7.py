@@ -90,4 +90,12 @@ def maskify(cc):
 
 # Is this a triangle?
 def is_triangle(a, b, c):
-    return False
+    maks = max([a,b,c])
+    rest = sum([a,b,c]) - maks
+    return False if maks >= rest else True
+
+# Find the next perfect square!
+def find_next_square(sq):
+    # Return the next square if sq is a square, -1 otherwise
+    return -1 if not ((sq**(1/2)//1)**2 == sq) else (sq**(1/2) + 1)**2
+
