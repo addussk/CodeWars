@@ -171,3 +171,88 @@ def series_sum(n):
             retArr.append((1 / elm))
         retVal = str(round(sum( retArr ),2 ))
         return retVal if len(retVal) == 4 else retVal + "0"
+
+# Remove the minimum
+def remove_smallest(numbers):
+    copyArr = [ el for el in numbers]
+    try:
+        copyArr.pop(copyArr.index(min(copyArr)))
+
+        return copyArr
+    except:
+        return []
+
+# Reverse words
+def reverse_words(text):
+    return " ".join([ el[::-1] for el in text.split(' ')])
+
+# Odd or Even?
+def odd_or_even(arr):
+    return "odd" if sum(arr)%2 else "even"
+
+# Breaking chocolate problem
+def break_chocolate(n, m):
+    if n+m:
+        return n*m -1
+    else: return 0
+
+# The highest profit wins!
+def min_max(lst):
+    return [min(lst), max(lst)]
+
+# Money, Money, Money
+def calculate_years(principal, interest, tax, desired):
+    currentVal = principal
+    cnt = 0
+    while currentVal < desired:
+        currentVal = currentVal + currentVal*(interest) - currentVal*(interest)*tax
+        cnt += 1
+    return cnt
+
+# Find the stray number
+def stray(arr):
+    setAr = set()
+    for el in arr:
+        setAr.add(el)
+    
+    for el in setAr:
+        if arr.count(el) == 1:
+            return el
+
+# Don't give me five!
+def dont_give_me_five(start,end):
+    return len([ el for el in range(start,end+1) if '5' not in str(el)])
+
+# Largest 5 digit number in a series
+def solution(digits):
+    return max([ int( digits[ startIdx:(startIdx+5)] ) for startIdx in range(len(digits) - 4 )])
+
+# Triangular Treasure TAGS: #overflow #datatypes
+def triangular(n):
+    return n * (n + 1) // 2 if n > 0 else 0
+
+# Factorial TAGS: #exceptions
+import math
+def factorial(n):
+    try:
+        if n >= 0 and n <= 12:
+            return math.factorial(n)
+        else: raise ValueError 
+
+# Sum of a sequence
+def sequence_sum(start, end, step):
+    return sum(range(start, end+1, step))
+
+# Make a function that does arithmetic
+def arithmetic(a, b, operator):
+    if operator == 'add':
+        return a+b
+    elif operator == 'subtract':
+        return a-b
+    elif operator == 'multiply':
+        return a*b
+    elif operator == 'divide':
+        return a/b
+    else:
+        return "error"
+
