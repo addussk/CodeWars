@@ -243,7 +243,7 @@ def factorial(n):
 def sequence_sum(start, end, step):
     return sum(range(start, end+1, step))
 
-# Make a function that does arithmetic
+# Make a function that does arithmetic TAGS: #calculator
 def arithmetic(a, b, operator):
     if operator == 'add':
         return a+b
@@ -256,3 +256,58 @@ def arithmetic(a, b, operator):
     else:
         return "error"
 
+# Count the Digit TAGS: #string
+def nb_dig(n, d):
+    return sum([ str(sqNum**2).count(str(d) ) for sqNum in range(n+1) ])
+
+# Summing a number's digits
+def sum_digits(number):
+    return sum( [ int(digNum) for digNum in str(abs(number))] )
+
+# Count the divisors of a number
+def divisors(n):
+    cnt = 0
+    for idx in range(1, (n+1)):
+        if not n%idx:
+            cnt += 1
+    return cnt
+
+# No oddities here
+def no_odds(values):
+    return [ num for num in values if not num%2 ]
+
+# Sort Numbers
+def solution(nums):
+    return [] if not nums else sorted(nums)
+
+# Anagram Detection TAGS: #ANAGRAM
+def is_anagram(test, original):
+    arr1 = [ ord(let.lower()) for let in test ]
+    arr2 = [ ord(let.lower()) for let in original ]
+    return sum(arr1) == sum(arr2)
+
+# Sum of all the multiples of 3 or 5
+def find(n):
+    return sum( [ num for num in range(n+1) if (not num%3 or not num%5)] )
+
+# Two Oldest Ages
+def two_oldest_ages(ages):
+    maxValue = max(ages)
+    ages.remove(maxValue)
+    secMaxValue = max(ages)
+    return [ secMaxValue, maxValue ]
+
+# Maximum Length Difference
+def mxdiflg(a1, a2):
+    try:
+        print([ len(el) for el in a1 ], [ len(el) for el in a2 ])
+        lenVal1 = {"min": min([ len(el) for el in a1 ]), "max": max([ len(el) for el in a1 ]) }
+        lenVal2 =  {"min": min([ len(el) for el in a2 ]), "max": max([ len(el) for el in a2 ]) }
+        
+        return max([ abs(lenVal1["max"] - lenVal2["min"]), abs(lenVal2["max"] - lenVal1["min"]) ]) if a1 and a2 else -1
+    except:
+        return -1
+
+# Testing 1-2-3
+def number(lines):
+    return [ str(el) +": "+ let for el, let in zip(range(1, 1+len(lines)), lines) ] 
