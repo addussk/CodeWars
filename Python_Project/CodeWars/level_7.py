@@ -393,4 +393,13 @@ def capitalize(s):
 def show_sequence(n):
     return "+".join( str(num) for num in range(n+1)) +" = {}".format(sum(range(n+1))) if n > 0 else str(n) +'<0' if n != 0 else "0=0"
 
+# Palindrome chain length TAGS: #palindrome
+def palindrome_chain_length(n):
+    iter, temp = 0, 0
+    while str(n) != str(n)[::-1]:
+        iter += 1
+        n = n + int(str(n)[::-1])
+        
+    return iter
+
 print(sort_by_length(["beg123213", "to", "beg", "life"]))
