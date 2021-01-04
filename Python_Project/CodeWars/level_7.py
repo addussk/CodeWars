@@ -234,10 +234,10 @@ def triangular(n):
 # Factorial TAGS: #exceptions
 import math
 def factorial(n):
-    try:
-        if n >= 0 and n <= 12:
-            return math.factorial(n)
-        else: raise ValueError 
+    if n >= 0 and n <= 12:
+        return math.factorial(n)
+    else: raise ValueError
+
 
 # Sum of a sequence
 def sequence_sum(start, end, step):
@@ -311,3 +311,86 @@ def mxdiflg(a1, a2):
 # Testing 1-2-3
 def number(lines):
     return [ str(el) +": "+ let for el, let in zip(range(1, 1+len(lines)), lines) ] 
+
+# Remove anchor from URL
+def remove_url_anchor(url):
+    return url[:url.find('#')] if '#' in url else url
+
+# Find the capitals
+def capitals(word):
+    arrPos = []
+    for let, position in zip(word, range(len(word))):
+        if 64 < ord(let) and ord(let) < 91:
+            arrPos.append(position)
+    return arrPos
+
+# Deodorant Evaporator
+def evaporator(content, evap_per_day, threshold):
+    days = 0
+    limitVal = (content * (threshold/100) )
+    while content > limitVal:
+        days += 1
+        content = content - (content * (evap_per_day/100) )
+
+    return days 
+
+# Two fighters, one winner.
+def declare_winner(fighter1, fighter2, first_attacker):
+    while fighter1.health > 0 and fighter2.health > 0:
+        if first_attacker == fighter1.name:
+            fighter2.health -= fighter1.damage_per_attack
+            
+            if fighter2.health <= 0:
+                return fighter1.name
+            else : 
+                fighter1.health -= fighter2.damage_per_attack
+                if fighter1.health <= 0:
+                    return fighter2.name
+                
+        else : 
+            fighter1.health -= fighter2.damage_per_attack
+            
+            if fighter1.health <= 0:
+                return fighter2.name
+            else : 
+                fighter2.health -= fighter1.damage_per_attack
+                if fighter2.health <= 0:
+                    return fighter1.name
+
+# Sort array by string length TAGS #sort
+def sort_by_length(arr):
+    dic = {}
+    for el in arr:
+        dic[el] = len(el)
+    return [ string[0] for string in sorted(dic.items(), key=lambda element: element[1])]
+
+# Are the numbers in order?
+def in_asc_order(arr):
+    return arr == sorted(arr)
+
+# The Coupon Code
+import datetime
+def check_coupon(entered_code, correct_code, current_date, expiration_date):
+    current_date = current_date.replace(',', '')
+    expiration_date = expiration_date.replace(',', '')
+    cur = current_date.split(' ')
+    expir = expiration_date.split(' ')
+
+    date_time_cur = datetime.datetime.strptime(((cur[0])[:3] +' '+ cur[1] +' '+ cur[2] ), '%b %d %Y')
+    date_time_exp= datetime.datetime.strptime(((expir[0])[:3] +' '+ expir[1] +' '+ expir[2] ), '%b %d %Y')
+    
+    return entered_code is correct_code and int(date_time_cur.strftime('%Y%m%d')) <= int(date_time_exp.strftime('%Y%m%d'))
+
+# Maximum Multiple
+def max_multiple(divisor, bound):
+    return max([ i for i in range(bound + 1) if not i % divisor ]) 
+
+# Alternate capitalization TAGS: #string
+def capitalize(s):
+    return ["".join(let.lower()  if pos%2 else let.upper() for let, pos in zip(s, range(len(s))) ), "".join(let.upper()  if pos%2 else let.lower() for let, pos in zip(s, range(len(s))) ) ]
+        
+# Sum of numbers from 0 to N
+def show_sequence(n):
+    return "+".join( str(num) for num in range(n+1)) +" = {}".format(sum(range(n+1))) if n > 0 else str(n) +'<0' if n != 0 else "0=0"
+
+print(sort_by_length(["beg123213", "to", "beg", "life"]))
