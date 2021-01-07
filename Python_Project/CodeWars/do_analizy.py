@@ -26,11 +26,6 @@ def animals(heads, legs):
 def validate_hello(greetings):
     return any(x in greetings.lower() for x in ['hello','ciao','salut','hallo','hola','ahoj','czesc'])
 
-# Training JS #18: Methods of String object--concat() split() and its good friend join()
-def split_and_merge(string_, separator):
-    return # your code here
-
-
 def any_arrows(arrows):
     return any(not i.get("damaged", False) for i in arrows)
 
@@ -40,3 +35,13 @@ def mxdiflg(a1, a2):
             len(max(a1, key=len)) - len(min(a2, key=len)),
             len(max(a2, key=len)) - len(min(a1, key=len)))
     return -1
+
+# Form The Minimum
+minValue = lambda a: int(''.join(sorted(str(c) for c in set(a))))
+
+def min_value(digits):
+     return int("".join(map(str,sorted(set(digits)))))
+
+
+def remove_duplicate_words(s):
+    return ' '.join(sorted(set(s.split()), key = s.index))

@@ -402,4 +402,117 @@ def palindrome_chain_length(n):
         
     return iter
 
-print(sort_by_length(["beg123213", "to", "beg", "life"]))
+# Sort the Gift Code
+def sort_gift_code(code):
+    return "".join(sorted(code))
+
+# Simple Fun #176: Reverse Letter
+def reverse_letter(string):
+    return "".join( let for let in string if (96 < ord(let) and 123 > ord(let)) )[::-1]
+
+# Find the middle element
+def gimme(input_array):
+    return input_array.index(sorted(input_array)[1])
+
+# Form The Minimum TAGS: #duplicates #sets
+def min_value(digits):
+    seen = set()
+    return int("".join(sorted([ str(num) for num in digits if num not in seen and not seen.add(num) ])))
+
+# Remove duplicate words #duplicates #sets #string
+def remove_duplicate_words(s):
+    seen = set()
+    return " ".join([ el for el in s.split(' ') if el not in seen and not seen.add(el) ] )
+
+# Sum of angles
+def angle(n):
+    return (n-2)*180
+
+# Fizz Buzz
+def fizzbuzz(n):
+    return [ "FizzBuzz" if (not el%5 and not el%3) else  "Fizz" if not el%3 else "Buzz" if not el%5 else el for el in range(1,n+1) ] 
+
+# Functional Addition
+def add(n):
+    '''Function that returns a function that adds n to any number'''
+    def add2(k):
+        return n + k
+    return add2
+
+# Round up to the next multiple of 5
+def round_to_next5(n):
+    return 0 if not n else (n//5)*5 if not n%5 else(n//5+1)*5
+
+# Gauß needs help! (Sums of a lot of numbers).
+def f(n):
+    try:
+        if n > 0:
+            return sum(range(n+1))
+        else: return None
+    except:
+        return None
+
+# Building Strings From a Hash
+def solution(pairs):
+    return ",".join(sorted(([ "{} = {}".format(str(el), (pairs.get(el))) for el in pairs ])))
+
+# Predict your age!
+def predict_age(*argv):
+    return ((sum([ el*el for el in argv]))**(1/2))//2
+
+# Fix string case
+def solve(s):
+    return s.upper() if (len(s) - sum(map(str.islower, s))) > sum(map(str.islower, s)) else s.lower()
+
+# Greet Me
+def greet(name): 
+    return "Hello {}!".format((name.lower()).capitalize())
+
+def is_sorted_and_how(arr):
+    return 'yes, ascending' if arr == sorted(arr) else 'yes, descending' if arr == sorted(arr, reverse=True) else 'no'
+
+# Number Of Occurrences
+def number_of_occurrences(element, sample):
+    return sample.count(element)
+
+# Power of two
+def power_of_two(x):
+    temp = 1
+    while temp < x:
+        temp = temp * 2
+    return temp == x
+
+# Most digits
+def find_longest(xs):
+    return max(xs, key=lambda x: len(str(x)))
+
+# Flatten
+def flatten(lst):
+    arr = []
+    for el in lst:
+        if type(el) is list:
+            arr.extend(el)
+        else : arr.append(el)
+    return arr 
+
+# Basic Sequence Practice
+def sum_of_n(n):
+    size = n+1 if n>=0 else abs(n) + 1
+    dir =(1 if n>=0 else -1)
+    return [ (el * (el + 1) // 2) * dir  for el in range(size)]
+
+# Thinkful - String Drills: Repeater
+def repeater(string, n):
+    return "".join( string for idx in range(n))
+
+# Leap Years
+def isLeapYear(year):
+    return False if year % 4 or ( not year % 100 and year % 400) else True
+
+# Speed Control
+
+
+print(solution({0: -2, 'z': 6, 1: -8, 'a': -4, 2: -9, 'b': -8, 'y': 6, 'c': 1}))
+
+
+
