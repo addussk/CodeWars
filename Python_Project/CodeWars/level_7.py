@@ -509,10 +509,80 @@ def repeater(string, n):
 def isLeapYear(year):
     return False if year % 4 or ( not year % 100 and year % 400) else True
 
+# JavaScript Array Filter
+def get_even_numbers(arr):
+    return list(filter(lambda y: y%2 ==0 , arr))
+
+# Flatten and sort an array #sort
+def flatten_and_sort(array):
+    arr = []
+    for singleArray in array:
+        arr.extend(singleArray)
+    return sorted(arr)
+
+# Boiled Eggs
+def cooking_time(eggs):
+    return 5*( eggs//8 + 1) if eggs%8 else 5*(eggs//8)
+
+# Caffeine Script
+def caffeine_buzz(n):
+    return "{}{}".format("Coffee" if (not n%3 and not n%4) else "Java", "Script" if not n%2 else "" ) if ( not n%3 )  else "mocha_missing!"
+
+# Row Weights
+def row_weights(array):
+    return (sum([ el for el,idx in zip(array, range(len(array))) if not idx%2] ) ,sum([ el for el,idx in zip(array, range(len(array))) if idx%2] ))
+
+# Area of a Circle
+import math
+def circle_area(r):
+    try:
+        if r <= 0:
+            return False
+        else:
+            return round(math.pi*(r**2),2)
+    except:
+        return False
+
+# Elapsed Seconds
+def elapsed_seconds(start, end):
+    return (end - start).seconds
+
+# # A Rule of Divisibility by 7
+def seven(m):
+    if not m :
+        return (0,0)
+    retVal, iter = (m//10) - 2* (m%10), 1
+    while( retVal >= 100):
+        iter += 1
+        retVal = (retVal//10) - 2* (retVal%10)
+    return (retVal, iter)
+
+# Parts of a list
+def partlist(arr):
+    return [ (" ".join( arr[:(idx+1)]) , " ".join( arr[(idx+1):])) for idx in range(len(arr)-1) ]
+
+# Refactored Greeting
+class Person:
+    def __init__(self, my_name):
+        self.name = my_name
+    
+    def greet(my_name, your_name):
+        return "Hello %s, my name is %s" % (your_name, my_name)
+    
+    def greet(self, your_name):
+        return "Hello %s, my name is %s" % (your_name, self.name)
+
 # Speed Control
+import math
+def gps(s, x):
+    try:
+        s = s/3600
+        avrgSpeed = [ math.floor(((x[idx+1] - x[idx])/s )*10)/10 for idx in range(len(x)-1)]
+        return max(avrgSpeed)
+    except:
+        return 0
 
-
-print(solution({0: -2, 'z': 6, 1: -8, 'a': -4, 2: -9, 'b': -8, 'y': 6, 'c': 1}))
+print(partlist(["I", "wish", "I", "hadn't", "come"]))
 
 
 

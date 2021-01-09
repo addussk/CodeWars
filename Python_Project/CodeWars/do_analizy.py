@@ -45,3 +45,11 @@ def min_value(digits):
 
 def remove_duplicate_words(s):
     return ' '.join(sorted(set(s.split()), key = s.index))
+
+def flatten_and_sort(array):
+    return sorted([j for i in array for j in i])
+
+
+def row_weights(array):
+    return sum(array[::2]), sum(array[1::2])
+    
