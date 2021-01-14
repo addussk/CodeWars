@@ -582,7 +582,111 @@ def gps(s, x):
     except:
         return 0
 
-print(partlist(["I", "wish", "I", "hadn't", "come"]))
+# Greatest common divisor
+def mygcd(x, y):    
+    return max([i for i in range(1,min([x,y])+1) if (not x%i) and (not y%i)])
+
+# Complete The Pattern #1
+def pattern(n):
+    return "" if not n else "\n".join([ ("{}".format(num))*num for num in range(1,n+1)])
+
+# Sum of Triangular Numbers
+def sum_triangular_numbers(n):
+    return sum([ (el * (el + 1) // 2) for el in range(1, n+1) ]) if n > 0 else 0
+
+# Alphabetical Addition
+def max_number(n):
+    return int(''.join(sorted(str(n), reverse=True)))
+
+# Making Copies
+def copy_list(l):
+    return [ el for el in l]
+
+#Find the nth Digit of a Number
+def find_digit(num, nth):
+    return -1 if nth <= 0 else 0 if nth>len(str(num)) else int(str(num)[-nth]) 
+
+# Moves in squared strings (I)
+def vert_mirror(strng):
+    return "\n".join([el[::-1] for el in strng.split("\n")])
+
+def hor_mirror(strng):
+    return "\n".join(strng.split("\n")[::-1])
+
+def oper(fct, s):
+    return fct(s)    
+
+# Return the Missing Element
+def get_missing_element(seq): 
+    i = 9
+    while i in seq:
+        i -= 1
+    return i
+
+# Alphabetical Addition
+def add_letters(*letters):
+    val = sum([ ord(let)-96 for let in letters ])
+    return 'z' if not val%26 else chr( 96+ val%26)
+
+# Love vs friendship
+def words_to_marks(s):
+    return sum([ ord(let)-96 for let in s])
+
+# Digitize
+def digitize(n):
+    return [int(num) for num in str(n)]
+
+# Simple beads count
+def count_red_beads(n):
+    return (n-1)*2 if n>0 else 0
+
+# Sum of Minimums!
+def sum_of_minimums(numbers):
+    return sum([ min(row) for row in numbers ])
+
+# Ordered Count of Characters
+def ordered_count(inp):
+    seen = set()
+    return [ (el, inp.count(el)) for el in inp if el not in seen and not seen.add(el)]
+
+# Averages of numbers
+def averages(arr):
+    return [ (arr[idx]+arr[idx+1])/2 for idx in range(len(arr)-1)] if arr else []
+
+# Folding your way to the moon
+def fold_to(distance):
+    if distance < 0:
+        return None
+    thickness, iteration = 0.0001, 0
+    while distance > thickness:
+        thickness *= 2
+        iteration +=1
+    
+    return iteration
+
+# Simple Fun #74: Growing Plant
+def growing_plant(upSpeed, downSpeed, desiredHeight):
+    days, actualHeight = 0, 0
+    while actualHeight < desiredHeight: 
+        days += 1
+        actualHeight += upSpeed
+        
+        if(actualHeight < desiredHeight):
+            actualHeight -= downSpeed
+        else: return days
+    
+    return 1
+
+# Halving Sum
+def halving_sum(n): 
+    return sum([ n//(2**el) for el in range( int(n**(1/2)+1)) ])
+
+# Regexp Basics - is it a vowel?
+def is_vowel(s): 
+    return s.lower() in "aeiou" if len(s) == 1 else False
+
+
+print(hor_mirror("abcd\nefgh\nijkl\nmnop"))
 
 
 
