@@ -685,8 +685,64 @@ def halving_sum(n):
 def is_vowel(s): 
     return s.lower() in "aeiou" if len(s) == 1 else False
 
+# Maximum Product
+def adjacent_element_product(arr):
+    return max([ (arr[idx]*arr[idx+1]) for idx in range(len(arr)-1)])
 
-print(hor_mirror("abcd\nefgh\nijkl\nmnop"))
+# Arithmetic Sequence!
+def nthterm(first, n, c):
+    if n == 0: return first
+    return nthterm(first, n - 1, c) + c
+
+# Last
+def last(*inp):
+    try:
+        return inp[-1][-1]
+    except:
+        return inp[-1]
+
+# Find the vowels
+def vowel_indices(word):
+	return [ (idx+1) for idx in range(0, len(word)) if word[idx].lower() in "aeiouy" ]
+
+# Substituting Variables Into Strings: Padded Numbers
+def solution(value):
+    return "Value is " + "0"*(5-len(str(value))) + str(value)
+
+# Sum of array singles
+def repeats(arr):
+    return sum([ el for el in arr if arr.count(el) == 1])
+
+# Currying functions: multiply all elements in an array
+from inspect import signature
+def curry(fnc):
+    def inner(arg):
+        if len(signature(fnc).parameters) == 1:
+            return fnc(arg)
+
+# Currying functions: multiply all elements in an array
+def multiply_all(arr):
+    def m(n):
+        return [i*n for i in arr]
+    return m
+
+# Drying Potatoes
+def potatoes(p0, w0, p1):
+    return math.floor(w0 * (100 - p0) / (100 - p1))
+
+# Sort Out The Men From Boys
+def men_from_boys(arr):
+    seen = set()
+    return [ el for el in sorted(arr) if not el%2 and el not in seen and not seen.add(el)] + [ el for el in sorted(arr,reverse=True) if el%2 and el not in seen and not seen.add(el)]
+
+# Make them bark!
+def bark(self):
+    return "Woof!"
+
+Dog.bark = bark
+
+
+
 
 
 

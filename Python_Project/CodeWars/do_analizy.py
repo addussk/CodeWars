@@ -52,4 +52,6 @@ def flatten_and_sort(array):
 
 def row_weights(array):
     return sum(array[::2]), sum(array[1::2])
-    
+
+def men_from_boys(arr):
+    return sorted(set(arr), key=lambda n: (n%2, n * (-1)**(n%2)))
