@@ -739,10 +739,92 @@ def men_from_boys(arr):
 def bark(self):
     return "Woof!"
 
-Dog.bark = bark
+# Dog.bark = bark
+
+# Javascript filter - 1
+def search_names(logins):
+    return filter(lambda el: "_" in el[0], logins)
+
+# Multiply characters
+def spam(number):
+    return 'hue' * number
+
+# Factorial Factory
+def factorial(n):
+    if n <0: return None
+    
+    if n == 0: return 1
+    return n * factorial(n-1)
+
+# Sum of all arguments
+def sum_args(*args):
+    return sum(args)
+
+# Basic Calculator
+def calculate(x, op, y): 
+    try:
+        if op == "+":
+            return x+y
+        elif op == "-":
+            return x-y
+        elif op == "*":
+            return x*y
+        elif op == "/":
+            return x/y
+        else: return None
+    except:
+        return None
+
+# Regexp Basics - is it a letter?
+def is_letter(s):
+    try:
+        return ord(s.lower()) in range(96,122)
+    except:
+        return False
+
+# Factorial
+def factorial(n):
+    if n <0: return None
+    
+    if n == 0: return 1
+    return n * factorial(n-1)
+
+# Find The Duplicated Number in a Consecutive Unsorted List
+def find_dup(arr):    
+    return [el for el in arr if arr.count(el) > 1 ][0]
 
 
+# Complete The Pattern #2
+def movie(card, ticket, perc):
+    iter, totCostA, totCostB, ticketB = 2, ticket, card + ticket*perc, ticket*perc
+
+    while math.ceil(totCostB) > totCostA:
+        totCostA = ticket*iter
+        ticketB = ticketB*perc
+        totCostB = totCostB + ticketB
+        if math.ceil(totCostB) < totCostA:
+            return iter
+        iter +=1
+    return iter
+
+# Collatz Conjecture Length
+def collatz(n):
+    l = 1
+    while n > 1:
+        l += 1
+        if n % 2 == 0: n /= 2
+        else: n = n * 3 + 1
+    return l
 
 
+# 
+def find_smallest(numbers,to_return):
+    minVal = min(numbers)
 
+    if to_return is "value":
+        return minVal
+    else:
+        return numbers.index(minVal)
+        
+print(collatz(73567465519280238573))
 
