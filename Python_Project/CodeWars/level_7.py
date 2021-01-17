@@ -888,5 +888,77 @@ def cube_odd(arr):
 def powers(lst):
     return 2**(len(lst))
 
-print(max_rot(56789))
+# Complete The Pattern #2
+def pattern(n):
+    return "\n".join( [ "".join( [str(el) for el in range(n,x,-1)]) for x in range(n)] )
 
+# Return the first M multiples of N
+def multiples(m, n):
+    return [i * n for i in range(1, m+1)]
+
+# Milk and Cookies for Santa
+def time_for_milk_and_cookies(dt):
+    return dt.day == 24 and dt.month == 12
+
+# Easy mathematical callback
+def process_array(arr, callback):
+    return list(map(callback, arr))
+
+# Minimize Sum Of Array (Array Series #1)
+def min_sum(arr):
+    arr = sorted(arr)
+    return sum([ arr[i]*arr[-i-1] for i in range(len(arr)//2) ])
+
+# Number of Decimal Digits
+def digits(n):
+    return len(str(n))
+
+# Alphabet war
+def alphabet_war(fight):
+    sumLeft = sum([ fight.count('w')*4, fight.count('p')*3, fight.count('b')*2, fight.count('s')*1 ])
+    sumRight = sum([fight.count('m')*4,fight.count('q')*3,fight.count('d')*2,fight.count('z')*1])
+    return "Let's fight again!" if sumLeft == sumRight else "Right side wins!" if sumRight > sumLeft else "Left side wins!"
+
+# Limit string length - 1
+def solution(st, limit): 
+    return st if limit >= len(st) else st[:limit] + '.'*(3)
+
+# shorter concat [reverse longer]
+def shorter_reverse_longer(a,b):
+    return b +a[::-1]+ b if len(a)>=len(b) else a +b[::-1]+ a 
+
+# ToLeetSpeak
+leetDict = {
+  'A' : '@',
+  'B' : '8',
+  'C' : '(',
+  'D' : 'D',
+  'E' : '3',
+  'F' : 'F',
+  'G' : '6',
+  'H' : '#',
+  'I' : '!',
+  'J' : 'J',
+  'K' : 'K',
+  'L' : '1',
+  'M' : 'M',
+  'N' : 'N',
+  'O' : '0',
+  'P' : 'P',
+  'Q' : 'Q',
+  'R' : 'R',
+  'S' : '$',
+  'T' : '7',
+  'U' : 'U',
+  'V' : 'V',
+  'W' : 'W',
+  'X' : 'X',
+  'Y' : 'Y',
+  'Z' : '2'
+}
+
+def to_leet_speak(str):
+    return "".join( leetDict[el] for el in str)
+
+
+print(to_leet_speak("LEET"))
