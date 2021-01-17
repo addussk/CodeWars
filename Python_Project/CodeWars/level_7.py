@@ -958,7 +958,7 @@ leetDict = {
 }
 
 def to_leet_speak(str):
-    return "".join( leetDict[el] for el in str)
+    return "".join( leetDict[el] if el != ' ' else ' ' for el in str)
 
 
 print(to_leet_speak("LEET"))
