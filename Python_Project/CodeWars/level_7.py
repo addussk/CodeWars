@@ -817,7 +817,7 @@ def collatz(n):
     return l
 
 
-# 
+# Smallest value of an array
 def find_smallest(numbers,to_return):
     minVal = min(numbers)
 
@@ -825,6 +825,68 @@ def find_smallest(numbers,to_return):
         return minVal
     else:
         return numbers.index(minVal)
-        
-print(collatz(73567465519280238573))
+
+# Remove Duplicates
+def unique(integers):
+    seen = set()
+    return [ el for el in integers if el not in seen and not seen.add(el)]
+
+# Reverse a Number
+def reverse_number(n):
+    try:
+        return int(str(n)[::-1])
+    except:
+        return -1*int(str(abs(n))[::-1])
+
+# Vampire Numbers
+def vampire_test(x, y):
+    x, y, sum = str(x), str(y), str(x*y)
+    return False if len(x) + len(y) != len(sum) else (min([ el in sum for el in x]) and min([g in sum for g in y]))
+
+# Head, Tail, Init and Last
+def head(arr):
+    return arr[0]
+
+def tail(arr):
+    return arr[1:]
+
+def init(arr):
+    return arr[0:-1]
+
+def last(arr):
+    return arr[-1]
+
+# Rotate for a Max
+def max_rot(n):
+    arr = []
+    iter = len(str(n)) - 1
+    for i in range(0,iter):
+        arr.append(n)
+        n = int( str(n)[:i] + str(n)[i+1:] + str(n)[i])
+    return max(arr) if arr else 1
+
+
+# Unlucky Days
+def unlucky_days(year):
+    return sum(date(year, month, 13).isoweekday() == 5 for month in range(1, 13))
+
+# Unpacking Arguments
+def spread(func, args):
+    return func(*args)
+
+# Sum of Odd Cubed Numbers
+def cube_odd(arr):
+    try:
+        if list(filter(lambda x: isinstance(x, bool) ,arr)):
+            return None
+        else:
+            arr = [el**3 for el in arr]
+            return sum(filter(lambda x: x%2, arr))
+    except: return None
+
+# Counting power sets
+def powers(lst):
+    return 2**(len(lst))
+
+print(max_rot(56789))
 

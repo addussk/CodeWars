@@ -55,3 +55,6 @@ def row_weights(array):
 
 def men_from_boys(arr):
     return sorted(set(arr), key=lambda n: (n%2, n * (-1)**(n%2)))
+
+def cube_odd(arr):
+    return sum( n**3 for n in arr if n % 2 ) if all(type(n) == int for n in arr) else None
