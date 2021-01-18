@@ -960,5 +960,71 @@ leetDict = {
 def to_leet_speak(str):
     return "".join( leetDict[el] if el != ' ' else ' ' for el in str)
 
+# Alphabet symmetry
+alphabet = {'a':1,
+        'b':2,
+        'c':3,
+        'd':4,
+        'e':5,
+        'f':6,
+        'g':7,
+        'h':8,
+        'i':9,
+        'j':10,
+        'k':11,
+        'l':12,
+        'm':13,
+        'n':14,'o':15,'p':16,'q':17,'r':18,'s':19,'t':20,'u':21,'v':22,'w':23,'x':24,'y':25,'z':26}
+def solve(arr):
+    return [ sum([ 1 for letter, pos in zip(el, range(len(el))) if alphabet[letter.lower()] == (pos+1) ]) for el in arr ]
 
-print(to_leet_speak("LEET"))
+# Coloured Triangles
+dict = {
+    "BG" : 'R',
+    "GB" : 'R',
+    "RG" : 'B',
+    "GR" : 'B',
+    "BR" : 'G',
+    "RB" : 'G',
+    "RR" : 'R',
+    "GG" : 'G',
+    "BB" : 'B',
+}
+
+def triangle(row):
+    if row[0]*len(row) == row:
+        return row[0]
+    
+    tmp, retRow, ln = "", row, len(row)-1
+
+    while len(retRow)>2:
+        for pos in range(0, ln):
+            
+            tmp = tmp + dict[retRow[pos:pos+2]]
+        
+        retRow = tmp
+        tmp, ln = "", len(retRow)-1
+    
+    return dict[retRow]
+
+# Small enough? - Beginner
+def small_enough(array, limit):
+    return  False if list(filter(lambda x: x > limit, array)) else True
+
+# Birthday I - Cake
+def cake(candles,debris):
+    if not candles:
+        return "That was close!"
+    print(candles, debris)
+    even = sum([ alphabet[debris[pos]] for pos in range(1,len(debris), 2) ])
+    odd = sum([ ord(debris[pos]) for pos in range(0,len(debris), 2)])
+    return 'That was close!' if candles*0.7 >= odd + even else 'Fire!'
+
+# Automorphic Number (Special Numbers Series #6)
+def automorphic(n):
+    return "Automorphic" if str(n) == str(n**2)[-len(str(n)):] else "Not!!"
+
+
+
+
+print(triangle('RBRGBRB'))
