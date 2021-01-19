@@ -1044,5 +1044,38 @@ def alternateCase(string):
 def is_monotone(heights):
     return True if not heights else all(x<y for x, y in zip(heights, heights[1:])) or all(x<=y for x, y in zip(heights, heights[1:]))
 
+# Array element parity
+def solve(arr):
+    return sum(set(arr))
+
+# esreveR
+def reverse(lst):
+    out = list()
+    for i in range(len(lst)-1,-1,-1):
+        out.append(lst[i])
+    return out
+
+# Find Count of Most Frequent Item in an Array
+def most_frequent_item_count(collection):
+    try:
+        seen = set(collection)
+        return max( collection.count(el) for el in seen)
+    except:
+        return 0
+
+# Word values
+def name_value(my_list):
+    return [ idx*sum( ord(let)-96 for let in s if ord(let)>96) for s,idx in zip(my_list, range(1, len(my_list) +1 )) ]
+
+# Bumps in the Road
+def bumps(road):
+    return "Woohoo!" if road.count('n') < 16 else "Car Dead"    
+
+
+
+
+
+
+
 
 print(triangle('RBRGBRB'))
