@@ -1024,7 +1024,25 @@ def cake(candles,debris):
 def automorphic(n):
     return "Automorphic" if str(n) == str(n**2)[-len(str(n)):] else "Not!!"
 
+# Search for letters
+def change(st):
+	return "".join( '1' if chr(idx + 97) in st.lower() else '0' for idx in range(26) )
 
+# Largest Elements
+def largest(n,xs):
+    return sorted(xs)[-n:]
+
+# Simple Fun #152: Invite More Women?
+def invite_more_women(arr):
+    return arr.count(1) > arr.count(-1)
+
+# Alternate case
+def alternateCase(string):
+    return string.swapcase()
+
+# Monotone travel
+def is_monotone(heights):
+    return True if not heights else all(x<y for x, y in zip(heights, heights[1:])) or all(x<=y for x, y in zip(heights, heights[1:]))
 
 
 print(triangle('RBRGBRB'))
