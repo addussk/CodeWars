@@ -1098,6 +1098,33 @@ def contain_all_rots(n, in_arr):
         n =  str(n)[1:] + str(n)[0]
     return all(( x in in_arr) for x in arr) if n else 1
 
+# Indexed capitalization
+def capitalize(s,ind):
+    return "".join(list(map(lambda pos: s[pos].upper() if pos in ind else s[pos], range(len(s)))))
+
+# Even numbers in an array
+def even_numbers(arr,n):
+    return list(filter(lambda x: not x%2, arr))[-n:]
+
+# Disarium Number (Special Numbers Series #3)
+def disarium_number(number):
+    return "Disarium !!" if sum(list(map(lambda el,n : int(el)**n, str(number), range(1, len(str(number))+1 )))) == number else "Not !!"
+
+# Product Of Maximums Of Array (Array Series #2)
+from functools import reduce
+def max_product(lst, n_largest_elements):
+    arr = []
+    while n_largest_elements:
+        maxV = max(lst)
+        arr.append(maxV)
+        lst.remove(maxV)
+        n_largest_elements -=1
+    return reduce(lambda x, y : x*y, arr)
+
+# Simple remove duplicates
+def solve(arr): 
+    seen = set()
+    return [ el for el in arr [::-1] if el not in seen and not seen.add(el)][::-1]
 
 
 
