@@ -1071,7 +1071,32 @@ def name_value(my_list):
 def bumps(road):
     return "Woohoo!" if road.count('n') < 16 else "Car Dead"    
 
+# All unique
+def has_unique_chars(string):
+    seen = set()
+    return "".join( el for el in string if el not in seen and not seen.add(el)) == string
 
+# Sum even numbers
+def sum_even_numbers(seq): 
+    return sum(list(filter(lambda x: not x%2, seq)))   
+
+# Looking for a benefactor
+def new_avg(arr, newavg):
+    try:
+        futDon = (len(arr)+1) * newavg - sum(arr)
+        if futDon >0:
+	        return math.ceil(futDon)
+        else: raise 'ValueError'
+
+# All Inclusive? #rotation
+def contain_all_rots(n, in_arr):
+    # Rotate for a Max
+    arr = []
+    iter = len(str(n))
+    for i in range(0,iter):
+        arr.append(n)
+        n =  str(n)[1:] + str(n)[0]
+    return all(( x in in_arr) for x in arr) if n else 1
 
 
 
