@@ -1082,11 +1082,10 @@ def sum_even_numbers(seq):
 
 # Looking for a benefactor
 def new_avg(arr, newavg):
-    try:
-        futDon = (len(arr)+1) * newavg - sum(arr)
-        if futDon >0:
-	        return math.ceil(futDon)
-        else: raise 'ValueError'
+    futDon = (len(arr)+1) * newavg - sum(arr)
+    if futDon >0:
+        return math.ceil(futDon)
+    else: raise 'ValueError'
 
 # All Inclusive? #rotation
 def contain_all_rots(n, in_arr):
@@ -1126,8 +1125,45 @@ def solve(arr):
     seen = set()
     return [ el for el in arr [::-1] if el not in seen and not seen.add(el)][::-1]
 
+# Simple consecutive pairs
+def pairs(ar):
+    print(ar)
+    return  [ ar[pos] - 1 == ar[pos+1] or ar[pos] + 1 == ar[pos+1]  for pos in range(0, len(ar)-1, 2)].count(True)
+
+# Building blocks
+class Block():
+    def __init__(self, ar):
+        self.width = ar[0]
+        self.leng = ar[1]
+        self.height = ar[2]
+    
+    def get_width(self):
+        return self.width
+    
+    def get_length(self):
+        return self.leng
+
+    def get_height(self):
+        return self.height
+    
+    def get_volume(self):
+        return self.height * self.leng * self.width
+    
+    def get_surface_area(self):
+        return 2*self.height*self.leng + 2*self.width*self.height + 2*self.leng*self.width
+
+# Build a square
+def generate_shape(integer):
+    return "\n".join( "+"*integer for row in range(integer))
+
+# Return substring instance count
+def solution(full_text, search_text):
+    return full_text.count(search_text)
+
+# By 3, or not by 3? That is the question . . .
+def divisible_by_three(st): 
+    return  sum( int(el) for el in st) in range(3, int(st)+1,3)
 
 
 
-
-print(triangle('RBRGBRB'))
+print(mip(924,5))
