@@ -1164,6 +1164,43 @@ def solution(full_text, search_text):
 def divisible_by_three(st): 
     return  sum( int(el) for el in st) in range(3, int(st)+1,3)
 
+# STRONGN Strong Number (Special Numbers Series #2)
+def strong_num(number):
+    return "STRONG!!!!" if sum(  math.factorial(int(singleN)) for singleN in str(number)) == number else "Not Strong !!"
+
+# max diff - easy
+def max_diff(lst):
+    try:
+        return max(lst) - min(lst)
+    except:
+        return 0
+
+# FIXME: Get Full Name
+class Dinglemouse(object):
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+    def get_full_name(self):
+        if  not self.first_name and not self.last_name:
+            return ""
+        elif self.first_name and not self.last_name:
+            return self.first_name
+        elif self.last_name and not self.first_name:
+            return self.last_name
+        else : return self.first_name + " " + self.last_name
+    
+# Nth power rules them all!
+def modified_sum(a, n):
+    return sum( el**n for el in a) - sum(a)
+
+# My Languages
+def my_languages(results):
+    results = sorted(results.items(), key = lambda x: x[1] , reverse=True)
+    return [ el[0] for el in results if el[1] >= 60 ]
+
+
+
+
 
 
 print(mip(924,5))
