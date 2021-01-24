@@ -1193,14 +1193,47 @@ class Dinglemouse(object):
 def modified_sum(a, n):
     return sum( el**n for el in a) - sum(a)
 
-# My Languages
+# My Languages #sorting #dict
 def my_languages(results):
     results = sorted(results.items(), key = lambda x: x[1] , reverse=True)
     return [ el[0] for el in results if el[1] >= 60 ]
 
+# Nth Smallest Element (Array Series #4)
+def nth_smallest(arr, pos):
+    for i in range(pos-1):
+        arr.remove(min(arr))
+    return min(arr)
+
+# Say hello!
+def greet(name):
+    return "hello {}!".format(name) if name else None
+
+# Tidy Number (Special Numbers Series #9)
+def tidyNumber(n):
+    return int("".join(sorted([ el for el in str(n)]))) == n
+
+# Jumping Number (Special Numbers Series #4)
+def jumping_number(number):
+    try:
+        stringN = str(number)
+        lng = len(stringN) - 1
+        return "Jumping!!" if not number//10 else "Jumping!!" if all([ abs(int(stringN[pos]) - int(stringN[pos+1]))==1 for pos in range(0, lng) ]) else "Not!!"
+    except:
+        return "Jumping!!"
+
+# Float Precision
+def solution(n):
+    return round(n,2)
 
 
 
 
 
-print(mip(924,5))
+
+
+
+
+
+
+
+print(jumping_number(79))
